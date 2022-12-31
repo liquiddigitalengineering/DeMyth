@@ -1,0 +1,689 @@
+
+Petra 4.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Alis
+  rotate: false
+  xy: 2, 1950
+  size: 178, 27
+  orig: 178, 27
+  offset: 0, 0
+  index: -1
+Badan
+  rotate: true
+  xy: 1332, 1684
+  size: 125, 149
+  orig: 125, 149
+  offset: 0, 0
+  index: -1
+Jaket kanan
+  rotate: true
+  xy: 1044, 1700
+  size: 118, 153
+  orig: 118, 153
+  offset: 0, 0
+  index: -1
+Jubah
+  rotate: true
+  xy: 1743, 1439
+  size: 229, 246
+  orig: 229, 246
+  offset: 0, 0
+  index: -1
+Kaki Kanan
+  rotate: true
+  xy: 623, 1927
+  size: 50, 147
+  orig: 50, 147
+  offset: 0, 0
+  index: -1
+Kaki Kiri
+  rotate: true
+  xy: 1282, 1813
+  size: 91, 136
+  orig: 91, 136
+  offset: 0, 0
+  index: -1
+Lengan Kanan
+  rotate: false
+  xy: 1725, 1905
+  size: 85, 72
+  orig: 85, 72
+  offset: 0, 0
+  index: -1
+Lengan Kiri
+  rotate: true
+  xy: 1101, 1912
+  size: 65, 97
+  orig: 65, 97
+  offset: 0, 0
+  index: -1
+Muka
+  rotate: false
+  xy: 2, 1105
+  size: 293, 277
+  orig: 293, 277
+  offset: 0, 0
+  index: -1
+Paha Kanan
+  rotate: true
+  xy: 1418, 1906
+  size: 71, 101
+  orig: 71, 101
+  offset: 0, 0
+  index: -1
+Paha Kiri
+  rotate: true
+  xy: 2, 1872
+  size: 76, 105
+  orig: 76, 105
+  offset: 0, 0
+  index: -1
+Poni 1
+  rotate: true
+  xy: 585, 1724
+  size: 117, 259
+  orig: 117, 259
+  offset: 0, 0
+  index: -1
+Poni 2
+  rotate: false
+  xy: 1253, 1210
+  size: 279, 250
+  orig: 279, 250
+  offset: 0, 0
+  index: -1
+Rok
+  rotate: false
+  xy: 1521, 1906
+  size: 126, 71
+  orig: 126, 71
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: true
+  xy: 809, 623
+  size: 297, 325
+  orig: 297, 325
+  offset: 0, 0
+  index: -1
+Tail 1
+  rotate: false
+  xy: 1812, 1905
+  size: 184, 72
+  orig: 184, 72
+  offset: 0, 0
+  index: -1
+Tangan Kanan
+  rotate: false
+  xy: 984, 1919
+  size: 115, 58
+  orig: 115, 58
+  offset: 0, 0
+  index: -1
+Tangan Kiri
+  rotate: true
+  xy: 295, 1857
+  size: 78, 119
+  orig: 78, 119
+  offset: 0, 0
+  index: -1
+Topi
+  rotate: false
+  xy: 1534, 1187
+  size: 484, 250
+  orig: 484, 250
+  offset: 0, 0
+  index: -1
+Up_charge/Kepala/Layer 1
+  rotate: false
+  xy: 1483, 1679
+  size: 302, 127
+  orig: 302, 127
+  offset: 0, 0
+  index: -1
+Up_charge/Kepala/Up_Charge_Topi
+  rotate: false
+  xy: 1379, 918
+  size: 467, 267
+  orig: 467, 267
+  offset: 0, 0
+  index: -1
+Up_charge/Kepala/Up_Charge_muka
+  rotate: false
+  xy: 353, 374
+  size: 370, 333
+  orig: 370, 333
+  offset: 0, 0
+  index: -1
+Up_charge/Up_Charge_jubah
+  rotate: false
+  xy: 1320, 1462
+  size: 421, 215
+  orig: 421, 215
+  offset: 0, 0
+  index: -1
+Up_charge/badan/Up_Charge_badan
+  rotate: true
+  xy: 158, 1601
+  size: 132, 184
+  orig: 132, 184
+  offset: 0, 0
+  index: -1
+Up_charge/badan/Up_Charge_kerah
+  rotate: false
+  xy: 530, 1554
+  size: 189, 168
+  orig: 189, 168
+  offset: 0, 0
+  index: -1
+Up_charge/kaki/Up_Charge_Kaki Kanan
+  rotate: true
+  xy: 1787, 1670
+  size: 130, 154
+  orig: 130, 154
+  offset: 0, 0
+  index: -1
+Up_charge/kaki/Up_Charge_Kaki Kiri
+  rotate: true
+  xy: 444, 1735
+  size: 116, 139
+  orig: 116, 139
+  offset: 0, 0
+  index: -1
+Up_charge/tangan/Up_Charge_lengan kanan bawah
+  rotate: false
+  xy: 616, 1847
+  size: 114, 78
+  orig: 114, 78
+  offset: 0, 0
+  index: -1
+Up_charge/tangan/Up_Charge_lengan kiri bawah
+  rotate: false
+  xy: 182, 1937
+  size: 118, 40
+  orig: 118, 40
+  offset: 0, 0
+  index: -1
+basic_slam1/Kepala/Topi 1
+  rotate: false
+  xy: 593, 998
+  size: 486, 251
+  orig: 486, 251
+  offset: 0, 0
+  index: -1
+basic_slam1/Kepala/muka 1
+  rotate: false
+  xy: 297, 1039
+  size: 294, 278
+  orig: 294, 278
+  offset: 0, 0
+  index: -1
+basic_slam1/Kepala/poni 1
+  rotate: false
+  xy: 1468, 600
+  size: 374, 316
+  orig: 374, 316
+  offset: 0, 0
+  index: -1
+basic_slam1/Tail 1 1
+  rotate: false
+  xy: 109, 1863
+  size: 184, 72
+  orig: 184, 72
+  offset: 0, 0
+  index: -1
+basic_slam1/Tail 2 1
+  rotate: true
+  xy: 471, 709
+  size: 287, 336
+  orig: 287, 336
+  offset: 0, 0
+  index: -1
+basic_slam1/badan 1
+  rotate: true
+  xy: 846, 1716
+  size: 117, 196
+  orig: 117, 196
+  offset: 0, 0
+  index: -1
+basic_slam1/jubah belakang 1
+  rotate: false
+  xy: 425, 1319
+  size: 237, 233
+  orig: 237, 233
+  offset: 0, 0
+  index: -1
+basic_slam1/jubah kiri 1
+  rotate: true
+  xy: 171, 1752
+  size: 103, 130
+  orig: 103, 130
+  offset: 0, 0
+  index: -1
+basic_slam1/kaki/Kaki Kanan 1
+  rotate: true
+  xy: 2, 1763
+  size: 98, 167
+  orig: 98, 167
+  offset: 0, 0
+  index: -1
+basic_slam1/kaki/Kaki Kiri 1
+  rotate: true
+  xy: 1199, 1688
+  size: 123, 131
+  orig: 123, 131
+  offset: 0, 0
+  index: -1
+basic_slam1/kaki/Paha Kanan 1
+  rotate: true
+  xy: 1588, 1809
+  size: 95, 98
+  orig: 95, 98
+  offset: 0, 0
+  index: -1
+basic_slam1/kaki/Paha Kiri 1
+  rotate: true
+  xy: 1052, 1827
+  size: 83, 114
+  orig: 83, 114
+  offset: 0, 0
+  index: -1
+basic_slam1/kerah kiri 1
+  rotate: true
+  xy: 527, 1929
+  size: 48, 94
+  orig: 48, 94
+  offset: 0, 0
+  index: -1
+basic_slam1/tangan kanan/lengan kanan atas 1
+  rotate: false
+  xy: 848, 1839
+  size: 89, 80
+  orig: 89, 80
+  offset: 0, 0
+  index: -1
+basic_slam1/tangan kanan/lengan kanan bawah 1
+  rotate: true
+  xy: 1904, 1802
+  size: 101, 135
+  orig: 101, 135
+  offset: 0, 0
+  index: -1
+basic_slam1/tangan kiri/lengan kiri atas 1
+  rotate: true
+  xy: 1200, 1912
+  size: 65, 92
+  orig: 65, 92
+  offset: 0, 0
+  index: -1
+basic_slam1/tangan kiri/lengan kiri bawah 1
+  rotate: false
+  xy: 1688, 1808
+  size: 106, 95
+  orig: 106, 95
+  offset: 0, 0
+  index: -1
+basic_slam2/Kepala/Topi 2
+  rotate: false
+  xy: 2, 770
+  size: 467, 267
+  orig: 467, 267
+  offset: 0, 0
+  index: -1
+basic_slam2/Kepala/muka 2
+  rotate: false
+  xy: 1081, 922
+  size: 296, 286
+  orig: 296, 286
+  offset: 0, 0
+  index: -1
+basic_slam2/Kepala/poni 2
+  rotate: false
+  xy: 725, 288
+  size: 370, 333
+  orig: 370, 333
+  offset: 0, 0
+  index: -1
+basic_slam2/Tail 1 2
+  rotate: false
+  xy: 1420, 1811
+  size: 166, 93
+  orig: 166, 93
+  offset: 0, 0
+  index: -1
+basic_slam2/Tail 2 2
+  rotate: false
+  xy: 1136, 611
+  size: 330, 305
+  orig: 330, 305
+  offset: 0, 0
+  index: -1
+basic_slam2/badan/badan 2
+  rotate: true
+  xy: 344, 1601
+  size: 132, 184
+  orig: 132, 184
+  offset: 0, 0
+  index: -1
+basic_slam2/badan/kerah 2
+  rotate: false
+  xy: 721, 1546
+  size: 189, 168
+  orig: 189, 168
+  offset: 0, 0
+  index: -1
+basic_slam2/jubah 2
+  rotate: false
+  xy: 2, 1384
+  size: 421, 215
+  orig: 421, 215
+  offset: 0, 0
+  index: -1
+basic_slam2/kaki/Kaki Kanan 2
+  rotate: true
+  xy: 2, 1631
+  size: 130, 154
+  orig: 130, 154
+  offset: 0, 0
+  index: -1
+basic_slam2/kaki/Kaki Kiri 2
+  rotate: true
+  xy: 303, 1735
+  size: 116, 139
+  orig: 116, 139
+  offset: 0, 0
+  index: -1
+basic_slam2/kaki/Paha Kanan 2
+  rotate: true
+  xy: 1796, 1808
+  size: 95, 106
+  orig: 95, 106
+  offset: 0, 0
+  index: -1
+basic_slam2/kaki/Paha Kiri 2
+  rotate: true
+  xy: 939, 1835
+  size: 82, 111
+  orig: 82, 111
+  offset: 0, 0
+  index: -1
+basic_slam2/tangan/lengan kanan atas 2
+  rotate: true
+  xy: 1649, 1906
+  size: 71, 74
+  orig: 71, 74
+  offset: 0, 0
+  index: -1
+basic_slam2/tangan/lengan kanan bawah 2
+  rotate: false
+  xy: 732, 1843
+  size: 114, 78
+  orig: 114, 78
+  offset: 0, 0
+  index: -1
+basic_slam2/tangan/lengan kiri atas 2
+  rotate: false
+  xy: 772, 1923
+  size: 91, 54
+  orig: 91, 54
+  offset: 0, 0
+  index: -1
+basic_slam2/tangan/lengan kiri bawah 2
+  rotate: false
+  xy: 302, 1937
+  size: 118, 40
+  orig: 118, 40
+  offset: 0, 0
+  index: -1
+jump1/peti_jump1
+  rotate: true
+  xy: 2, 2
+  size: 370, 681
+  orig: 370, 681
+  offset: 0, 0
+  index: -1
+jump1/tangan_jump1
+  rotate: false
+  xy: 416, 1853
+  size: 198, 74
+  orig: 198, 74
+  offset: 0, 0
+  index: -1
+jump2/lengan-A_jump2
+  rotate: false
+  xy: 422, 1930
+  size: 103, 47
+  orig: 103, 47
+  offset: 0, 0
+  index: -1
+jump2/lengan-B_Jump2
+  rotate: false
+  xy: 1294, 1910
+  size: 122, 67
+  orig: 122, 67
+  offset: 0, 0
+  index: -1
+peti/spin1
+  rotate: true
+  xy: 664, 1251
+  size: 226, 587
+  orig: 226, 587
+  offset: 0, 0
+  index: -1
+spin2/jubah_spin2
+  rotate: false
+  xy: 912, 1479
+  size: 406, 207
+  orig: 406, 207
+  offset: 0, 0
+  index: -1
+spin2/kuncir_spin2
+  rotate: false
+  xy: 2, 439
+  size: 349, 329
+  orig: 349, 329
+  offset: 0, 0
+  index: -1
+spin2/tangan_spin2
+  rotate: false
+  xy: 865, 1921
+  size: 117, 56
+  orig: 117, 56
+  offset: 0, 0
+  index: -1
+spin6/badan_spin6
+  rotate: false
+  xy: 1449, 249
+  size: 480, 349
+  orig: 480, 349
+  offset: 0, 0
+  index: -1
+spin6/kuncir_spin6
+  rotate: false
+  xy: 1097, 276
+  size: 350, 333
+  orig: 350, 333
+  offset: 0, 0
+  index: -1
+spin6/tangan_spin6
+  rotate: true
+  xy: 1168, 1820
+  size: 90, 112
+  orig: 90, 112
+  offset: 0, 0
+  index: -1
+
+Petra 42.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Heavy_Slam
+  rotate: false
+  xy: 2, 1365
+  size: 720, 396
+  orig: 720, 396
+  offset: 0, 0
+  index: -1
+Side_Charge
+  rotate: true
+  xy: 724, 1358
+  size: 403, 659
+  orig: 403, 659
+  offset: 0, 0
+  index: -1
+Up_Charge_peti
+  rotate: true
+  xy: 1142, 914
+  size: 430, 690
+  orig: 430, 690
+  offset: 0, 0
+  index: -1
+jump2/peti_jump2
+  rotate: true
+  xy: 463, 928
+  size: 428, 677
+  orig: 428, 677
+  offset: 0, 0
+  index: -1
+peti/spin2
+  rotate: false
+  xy: 664, 480
+  size: 698, 432
+  orig: 698, 432
+  offset: 0, 0
+  index: -1
+peti/spin5
+  rotate: false
+  xy: 694, 11
+  size: 496, 467
+  orig: 496, 467
+  offset: 0, 0
+  index: -1
+peti_jump3
+  rotate: false
+  xy: 2, 42
+  size: 690, 436
+  orig: 690, 436
+  offset: 0, 0
+  index: -1
+peti_jump5
+  rotate: true
+  xy: 2, 496
+  size: 430, 660
+  orig: 430, 660
+  offset: 0, 0
+  index: -1
+peti_jump6
+  rotate: true
+  xy: 1364, 473
+  size: 439, 661
+  orig: 439, 661
+  offset: 0, 0
+  index: -1
+spin2/kepala_spin2
+  rotate: false
+  xy: 1385, 1346
+  size: 476, 415
+  orig: 476, 415
+  offset: 0, 0
+  index: -1
+spin4
+  rotate: true
+  xy: 1192, 2
+  size: 469, 720
+  orig: 469, 720
+  offset: 0, 0
+  index: -1
+spin6/kepala_spin6
+  rotate: false
+  xy: 2, 943
+  size: 459, 420
+  orig: 459, 420
+  offset: 0, 0
+  index: -1
+
+Petra 43.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Peti
+  rotate: true
+  xy: 634, 704
+  size: 548, 745
+  orig: 548, 745
+  offset: 0, 0
+  index: -1
+basic_slam1/peti 1
+  rotate: false
+  xy: 2, 729
+  size: 630, 541
+  orig: 630, 541
+  offset: 0, 0
+  index: -1
+peti/spin3
+  rotate: true
+  xy: 2, 1296
+  size: 475, 482
+  orig: 475, 482
+  offset: 0, 0
+  index: -1
+peti/spin4
+  rotate: false
+  xy: 2, 150
+  size: 728, 552
+  orig: 728, 552
+  offset: 0, 0
+  index: -1
+peti/spin6
+  rotate: false
+  xy: 1198, 1254
+  size: 571, 517
+  orig: 571, 517
+  offset: 0, 0
+  index: -1
+spin2/badan_spin2
+  rotate: true
+  xy: 732, 2
+  size: 552, 755
+  orig: 552, 755
+  offset: 0, 0
+  index: -1
+spin3
+  rotate: false
+  xy: 1381, 556
+  size: 612, 696
+  orig: 612, 696
+  offset: 0, 0
+  index: -1
+spin5
+  rotate: true
+  xy: 486, 1272
+  size: 499, 710
+  orig: 499, 710
+  offset: 0, 0
+  index: -1
+
+Petra 44.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+basic_slam2/peti 2
+  rotate: true
+  xy: 715, 2
+  size: 595, 762
+  orig: 595, 762
+  offset: 0, 0
+  index: -1
+spin1
+  rotate: true
+  xy: 2, 16
+  size: 581, 711
+  orig: 581, 711
+  offset: 0, 0
+  index: -1

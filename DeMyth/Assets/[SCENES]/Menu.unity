@@ -2606,7 +2606,6 @@ GameObject:
   - component: {fileID: 1167182178}
   - component: {fileID: 1167182179}
   - component: {fileID: 1167182180}
-  - component: {fileID: 1167182181}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2690,9 +2689,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167182174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802eca19ed2084547b5e239dff99a541, type: 3}
+  m_Script: {fileID: 11500000, guid: 85ec8c38671af974f8ce6787607de701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frameRate: 60
 --- !u!114 &1167182179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2702,9 +2702,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167182174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f4249a312fc2624882ac52d79f8cf32, type: 3}
+  m_Script: {fileID: 11500000, guid: ba8e36c3fdebc1d4c85b65d17fbd2085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
+  musicMixer: {fileID: 0}
+  resolutionDropdown: {fileID: 2114286780}
+  audioSlider: {fileID: 362647342}
+  musicSlider: {fileID: 1205624932}
+  masterEnabled: {fileID: 240987376}
+  masterDisabled: {fileID: 102904203}
+  musicEnabled: {fileID: 1464121790}
+  musicDisabled: {fileID: 973555680}
 --- !u!82 &1167182180
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2801,18 +2810,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1167182181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167182174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1168393789
 GameObject:
   m_ObjectHideFlags: 0

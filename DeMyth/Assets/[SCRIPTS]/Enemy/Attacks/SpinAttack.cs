@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinAttack : MonoBehaviour
+[CreateAssetMenu(fileName ="SpinAttack", menuName ="Attacks/Spin")]
+public class SpinAttack : EnemyBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ExitState(EnemyStateManager enemyStateManager)
     {
-        
+        throw new System.NotImplementedException();
+    }
+
+    public override void UpdateState(EnemyStateManager enemyStateManager)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
+    {
+        throw new System.NotImplementedException();
     }
 }

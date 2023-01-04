@@ -5,29 +5,38 @@ using UnityEngine;
 public class EnemyStateManager : MonoBehaviour
 {
     public GameObject Player { get => player; }
-    [SerializeField] private GameObject player;
+    public int Health { get => health; }
 
-    [SerializeField] private Idle idle;
+    [Header("Health things")]
+    [SerializeField] private int health;
+
+    [SerializeField] private GameObject player;
+    [SerializeField] private EnemyBaseState initialState;
+
 
     private EnemyBaseState currentScene;
 
     private void Awake()
     {
-        currentScene = idle;
+        currentScene = initialState;
 
-        currentScene.EnterState(this, 0);
+        StartCoroutine(currentScene.EnterState(this, 0));
     }
 
+    private void Update()
+    {
+        currentScene.UpdateState(this);
+    }
 
     public void SwitchStates(EnemyBaseState state)
     {
         currentScene = state;
-        state.EnterState(this, 0);
+        StartCoroutine(state.EnterState(this, 0));
     }
 
     public void SwitchToIdle(int time)
     {
-        currentScene = idle;
-        currentScene.EnterState(this, time);
+        currentScene = initialState;
+        StartCoroutine(currentScene.EnterState(this, time));
     }
 }

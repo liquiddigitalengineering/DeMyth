@@ -7,25 +7,27 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "IdleAttack", menuName = "Attacks/Idle")]
 public class Idle : EnemyBaseState
 {
+    [Min(1)][SerializeField] private float enemyRange = 1;
     [SerializeField] private List<EnemyBaseState> InRangeAttacks;
     [SerializeField] private List<EnemyBaseState> NotInRangeAttacks;
-    [Min(1)]
-    [SerializeField] private float enemyRange = 1;
-
+   
     private EnemyBaseState state;
 
-    public override void EnterState(EnemyStateManager enemyStateManager, int time) => Operation(enemyStateManager, time);
-
-
-    private async void Operation(EnemyStateManager enemyStateManager, int time)
+    public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
         ExecuteOperation(enemyStateManager);
-        await Task.Delay(time);
+        yield return new WaitForSeconds(time);
         ExitState(enemyStateManager);
     }
+
+    public override void UpdateState(EnemyStateManager enemyStateManager)
+    {
+        throw new System.NotImplementedException();
+    }
+
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
-        float distance = Vector2.Distance(enemyStateManager.gameObject.transform.position, enemyStateManager.Player.transform.position);      
+        float distance = Vector2.Distance(enemyStateManager.gameObject.transform.position, enemyStateManager.Player.transform.position);
         bool isNear = distance <= enemyRange;
 
         if (isNear)

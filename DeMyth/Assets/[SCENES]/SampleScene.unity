@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1359010804}
-  idle: {fileID: 11400000, guid: 73e40f41d955f9f499878ad7ec145274, type: 2}
+  initialState: {fileID: 11400000, guid: 8583ef4dd8684f7458d3acbda265ba97, type: 2}
 --- !u!212 &967882952
 SpriteRenderer:
   m_ObjectHideFlags: 0

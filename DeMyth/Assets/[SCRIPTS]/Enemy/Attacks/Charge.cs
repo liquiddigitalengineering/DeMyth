@@ -8,9 +8,15 @@ public class Charge : EnemyBaseState
     [Tooltip("Time before the next attack in miliseconds")]
     [SerializeField] [Min(1000f)] private int timeBeforeAttack = 1000;
 
-    public override void EnterState(EnemyStateManager enemyStateManager, int time)
+    public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
         ExecuteOperation(enemyStateManager);
+        yield return null;
+    }
+
+    public override void UpdateState(EnemyStateManager enemyStateManager)
+    {
+        throw new System.NotImplementedException();
     }
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
@@ -26,6 +32,7 @@ public class Charge : EnemyBaseState
         if (playerPosition.y < enemyPosition.y)
             Debug.Log("Down  baby");
         else Debug.Log("Up baby");
+
         ExitState(enemyStateManager);
     }
 

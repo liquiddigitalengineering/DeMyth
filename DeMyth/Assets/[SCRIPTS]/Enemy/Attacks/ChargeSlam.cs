@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "JumpSlamAttack", menuName = "Attacks/JumpSlam")]
-public class JumpSlam : EnemyBaseState
+[CreateAssetMenu(fileName = "ChargeSlamAttack", menuName = "Attacks/ChargeSlam")]
+public class ChargeSlam : EnemyBaseState
 {
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager,int time)
     {

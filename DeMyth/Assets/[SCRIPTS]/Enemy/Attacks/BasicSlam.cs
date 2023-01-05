@@ -12,6 +12,7 @@ public class BasicSlam : EnemyBaseState
     [Header("Grave stone settings")]
 
     [SerializeField] [Min(0)] private float graveStoneSpeed;
+    [SerializeField][Min(0)] private float graveStoneDamage;
 
     private float timeLeft;
     private Transform playerTransform;

@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   player: {fileID: 1359010804}
-  initialState: {fileID: 11400000, guid: a82600071a967334489a5bdf268edb40, type: 2}
+  initialState: {fileID: 11400000, guid: bdce311275444e8478db43afb1271dcc, type: 2}
   graveStone: {fileID: 576662641}
 --- !u!212 &967882952
 SpriteRenderer:

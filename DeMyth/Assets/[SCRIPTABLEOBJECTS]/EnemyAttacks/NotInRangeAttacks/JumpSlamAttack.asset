@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261ab7275ecfcd347adf74c033dada73, type: 3}
   m_Name: JumpSlamAttack
   m_EditorClassIdentifier: 
+  timeBeforeNextAttack: 500
+  height: 2
+  speed: 8

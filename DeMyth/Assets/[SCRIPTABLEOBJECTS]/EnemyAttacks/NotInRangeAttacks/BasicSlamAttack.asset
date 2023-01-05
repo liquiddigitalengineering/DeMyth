@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8af36fddb6a17141b4141fa64a1dd98, type: 3}
   m_Name: BasicSlamAttack
   m_EditorClassIdentifier: 
-  playerFollowTime: 10
-  graveStone: {fileID: 0}
+  playerFollowTime: 5
+  timeBeforeNextAttack: 1000
+  graveStoneSpeed: 1

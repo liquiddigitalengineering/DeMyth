@@ -6,13 +6,14 @@ public class EnemyStateManager : MonoBehaviour
 {
     public GameObject Player { get => player; }
     public int Health { get => health; }
+    public GameObject GraveStone { get => graveStone; }
 
     [Header("Health things")]
     [SerializeField] private int health;
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
-
+    [SerializeField] private GameObject graveStone;
 
     private EnemyBaseState currentScene;
 

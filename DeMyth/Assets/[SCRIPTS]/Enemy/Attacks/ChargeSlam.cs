@@ -5,14 +5,26 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ChargeSlamAttack", menuName = "Attacks/ChargeSlam")]
 public class ChargeSlam : EnemyBaseState
 {
+    [SerializeField] private float attackTime;
+    [Tooltip("In milliseconds")]
+    [SerializeField] private int timeBeforeNextAttack = 1000;
+    [SerializeField] private float frequency;
+    [SerializeField] private float amplitude;
+
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager,int time)
     {
-        throw new System.NotImplementedException();
+        enemyStateManager.GraveStone.SetActive(true);
+
+        
+        yield return null;
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
-        throw new System.NotImplementedException();
+        float y = Mathf.Cos(Time.time * frequency) * amplitude;
+        float x = Mathf.Sin(Time.time * frequency) * amplitude;
+
+        enemyStateManager.GraveStone.transform.position = new Vector2(x,y);
     }
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
@@ -22,6 +34,7 @@ public class ChargeSlam : EnemyBaseState
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
-        throw new System.NotImplementedException();
+        enemyStateManager.GraveStone.SetActive(false);
+        enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
     }
 }

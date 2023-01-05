@@ -9,19 +9,26 @@ public class BasicSlam : EnemyBaseState
     [Min(0)][SerializeField] private float playerFollowTime;
     [Tooltip("In milliseconds")]
     [SerializeField] private int timeBeforeNextAttack = 1000;
-    [SerializeField] private GameObject graveStone;
+    [Header("Grave stone settings")]
+
+    [SerializeField] [Min(0)] private float graveStoneSpeed;
 
     private float timeLeft;
+    private Transform playerTransform;
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
-    {
+    {      
+        playerTransform = enemyStateManager.Player.transform;
+        enemyStateManager.GraveStone.transform.position = playerTransform.position;
+        enemyStateManager.GraveStone.SetActive(true);
+
         timeLeft = playerFollowTime;
         yield return null;
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
-        if (timeLeft < 0) ExitState(enemyStateManager);
+        if (timeLeft <= 0) ExitState(enemyStateManager);
 
         ExecuteOperation(enemyStateManager);
         timeLeft -= Time.deltaTime;
@@ -29,8 +36,14 @@ public class BasicSlam : EnemyBaseState
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
-        throw new System.NotImplementedException();
+        playerTransform = enemyStateManager.Player.transform;
+
+        enemyStateManager.GraveStone.transform.position = Vector3.MoveTowards(enemyStateManager.GraveStone.transform.position, playerTransform.position, graveStoneSpeed * Time.deltaTime);
     }
 
-    public override void ExitState(EnemyStateManager enemyStateManager) => enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
+    public override void ExitState(EnemyStateManager enemyStateManager)
+    {
+        enemyStateManager.GraveStone.SetActive(false);
+        enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
+    }
 }

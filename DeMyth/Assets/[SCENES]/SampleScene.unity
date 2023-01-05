@@ -218,12 +218,12 @@ GameObject:
   - component: {fileID: 576662642}
   - component: {fileID: 576662643}
   m_Layer: 3
-  m_Name: Point
+  m_Name: GraveStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &576662642
 Transform:
   m_ObjectHideFlags: 0
@@ -279,7 +279,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_FlipX: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 967882952}
   - component: {fileID: 967882953}
   m_Layer: 3
-  m_Name: GameObject
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,8 +338,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7afd481cfa6742800683ee10a0406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   player: {fileID: 1359010804}
-  initialState: {fileID: 11400000, guid: 8583ef4dd8684f7458d3acbda265ba97, type: 2}
+  initialState: {fileID: 11400000, guid: a82600071a967334489a5bdf268edb40, type: 2}
+  graveStone: {fileID: 576662641}
 --- !u!212 &967882952
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -73,21 +73,18 @@ public class Swipe : MonoBehaviour
 
     private void GecisiDuzenle(float distance, float[] pos, Button btn)
     {
-        // btnSayi = System.Int32.Parse(btn.transform.name);
-
         for (int i = 0; i < pos.Length; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
                 scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[btnNumber], 1f * Time.deltaTime);
-
             }
         }
 
-        for (int i = 0; i < btn.transform.parent.transform.childCount; i++)
-        {
-            btn.transform.name = ".";
-        }
+        //for (int i = 0; i < btn.transform.parent.transform.childCount; i++)
+        //{
+           //btn.transform.name = ".";
+        //}
 
     }
     public void WhichBtnClicked(Button btn)

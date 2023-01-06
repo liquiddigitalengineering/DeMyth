@@ -303,6 +303,8 @@ GameObject:
   - component: {fileID: 967882951}
   - component: {fileID: 967882952}
   - component: {fileID: 967882953}
+  - component: {fileID: 967882954}
+  - component: {fileID: 967882955}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
@@ -338,9 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7afd481cfa6742800683ee10a0406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   player: {fileID: 1359010804}
-  initialState: {fileID: 11400000, guid: bdce311275444e8478db43afb1271dcc, type: 2}
+  initialState: {fileID: 11400000, guid: 4cfa989b915b8004a844800882c3e5ee, type: 2}
   graveStone: {fileID: 576662641}
 --- !u!212 &967882952
 SpriteRenderer:
@@ -420,6 +421,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &967882954
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967882948}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &967882955
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967882948}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &1359010804
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,9 +469,10 @@ GameObject:
   - component: {fileID: 1359010806}
   - component: {fileID: 1359010805}
   - component: {fileID: 1359010807}
+  - component: {fileID: 1359010808}
   m_Layer: 3
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,7 +537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359010804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.79, y: -3.09, z: 0}
+  m_LocalPosition: {x: -1.07, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -531,3 +570,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1359010808
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359010804}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

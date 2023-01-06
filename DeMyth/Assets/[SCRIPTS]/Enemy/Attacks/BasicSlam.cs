@@ -24,7 +24,7 @@ public class BasicSlam : EnemyBaseState
         enemyStateManager.GraveStone.SetActive(true);
 
         timeLeft = playerFollowTime;
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)

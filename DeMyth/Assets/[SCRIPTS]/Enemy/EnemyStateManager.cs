@@ -1,21 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    public GameObject Player { get => player; }
-    public int Health { get => health; }
-    public GameObject GraveStone { get => graveStone; }
+    public static Action<bool> OutOfRangeEvent;
 
-    [Header("Health things")]
-    [SerializeField] private int health;
+    public GameObject Player { get => player; }
+    public GameObject GraveStone { get => graveStone; }
+    public bool InRange { get => playerInRange; }
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
     [SerializeField] private GameObject graveStone;
 
     private EnemyBaseState currentScene;
+    private bool playerInRange = false;
 
     private void Awake()
     {
@@ -40,4 +41,29 @@ public class EnemyStateManager : MonoBehaviour
         currentScene = initialState;
         StartCoroutine(currentScene.EnterState(this, time));
     }
+
+    #region triggers
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            OutOfRangeEvent?.Invoke(true);
+    }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Player"))
+    //        playerInRange = true;
+    //}
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Player")) {
+            playerInRange = false;
+
+            OutOfRangeEvent?.Invoke(false);
+        }
+            
+    }
+    #endregion
 }

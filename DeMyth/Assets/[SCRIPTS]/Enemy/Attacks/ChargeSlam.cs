@@ -14,9 +14,7 @@ public class ChargeSlam : EnemyBaseState
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager,int time)
     {
         enemyStateManager.GraveStone.SetActive(true);
-
-        
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)

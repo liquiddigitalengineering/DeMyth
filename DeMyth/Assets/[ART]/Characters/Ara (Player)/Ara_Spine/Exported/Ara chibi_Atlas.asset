@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Ara chibi_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: e77cc1e7a5c81da4e81dc2ecf931902b, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 5976e6745190e0f4aa2c528127340e02, type: 2}
+  - {fileID: 2100000, guid: 6cd1d15002900824b89008e6e994679e, type: 2}
+  - {fileID: 2100000, guid: 1a5a930c66a48fa44b2fe16bfc422760, type: 2}
+  - {fileID: 2100000, guid: 825f932137289a54aa0fd45aa2732c20, type: 2}
+  - {fileID: 2100000, guid: 8dcc58cb9eee356419b456eb52a69a41, type: 2}
+  - {fileID: 2100000, guid: 0511f0d45c2f3a84da287cd8a25de379, type: 2}
+  - {fileID: 2100000, guid: 35e5312e325acd94da82269b44aab66e, type: 2}
+  - {fileID: 2100000, guid: 5c8467a779c408c4d9098a9649024475, type: 2}
+  - {fileID: 2100000, guid: be7a066e975eaa941be6c131ce495e26, type: 2}
+  - {fileID: 2100000, guid: 70e6ab3cf73a1c74ea9bfd384ac506e3, type: 2}
+  - {fileID: 2100000, guid: dcdc010ffabad01469252a2e6013733a, type: 2}
+  - {fileID: 2100000, guid: 586920dcdeb2f91498988cb7e8d76fcf, type: 2}
+  - {fileID: 2100000, guid: b29d8017ad6a2574c99edb5910f7b734, type: 2}

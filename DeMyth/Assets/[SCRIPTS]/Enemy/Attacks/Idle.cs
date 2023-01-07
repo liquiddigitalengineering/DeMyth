@@ -19,10 +19,7 @@ public class Idle : EnemyBaseState
         ExitState(enemyStateManager);
     }
 
-    public override void UpdateState(EnemyStateManager enemyStateManager)
-    {
-        throw new System.NotImplementedException();
-    }
+    public override void UpdateState(EnemyStateManager enemyStateManager) { }
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {

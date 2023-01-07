@@ -17,7 +17,8 @@ public class BasicSlam : EnemyBaseState
     private Transform playerTransform;
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
-    {      
+    {
+        enemyStateManager.Anim.SetTrigger("basicSlam");
         playerTransform = enemyStateManager.Player.transform;
         enemyStateManager.GraveStone.transform.position = playerTransform.position;
         enemyStateManager.GraveStone.SetActive(true);

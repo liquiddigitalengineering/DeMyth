@@ -7,6 +7,7 @@ public class EnemyStateManager : MonoBehaviour
 {
     public static Action<bool> OutOfRangeEvent;
 
+    public Animator Anim { get => anim; }
     public GameObject Player { get => player; }
     public GameObject GraveStone { get => graveStone; }
     public bool InRange { get => playerInRange; }
@@ -14,6 +15,7 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
     [SerializeField] private GameObject graveStone;
+    [SerializeField] private Animator anim;
 
     private EnemyBaseState currentScene;
     private bool playerInRange = false;
@@ -21,7 +23,6 @@ public class EnemyStateManager : MonoBehaviour
     private void Awake()
     {
         currentScene = initialState;
-
         StartCoroutine(currentScene.EnterState(this, 0));
     }
 

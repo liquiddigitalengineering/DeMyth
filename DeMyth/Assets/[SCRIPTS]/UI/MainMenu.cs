@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 	void Start(){
 		Application.targetFrameRate = frameRate;
 	}
-	public void SceneLoad(string SceneToLoad){
+	public void SceneLoad(string SceneToLoad, bool LoadTransition){
 		SceneManager.LoadScene(SceneToLoad);
 	}
 	public void QuitGame(){

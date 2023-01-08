@@ -18,10 +18,10 @@ public class JumpSlam : EnemyBaseState
     private bool canBeFollowed = false;
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+        enemyStateManager.Anim.SetTrigger("jumpSlam");
         canBeFollowed = false;
-        yield return new WaitForSeconds(2f);
-        ExecuteOperation(enemyStateManager);
         yield return new WaitForSeconds(1f);
+        ExecuteOperation(enemyStateManager);
         canBeFollowed = true;
     }
 
@@ -34,10 +34,7 @@ public class JumpSlam : EnemyBaseState
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.gameObject.transform.position += new Vector3(0, height);
-
         playerTransform = enemyStateManager.Player.transform.position;
-       
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager)

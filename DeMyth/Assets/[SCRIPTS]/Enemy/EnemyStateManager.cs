@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ public class EnemyStateManager : MonoBehaviour
 {
     public static Action<bool> OutOfRangeEvent;
 
+    public SkeletonMecanim Skeleton { get => skeletonMecanim; }
     public Animator Anim { get => anim; }
     public GameObject Player { get => player; }
     public GameObject GraveStone { get => graveStone; }
@@ -16,6 +18,7 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private EnemyBaseState initialState;
     [SerializeField] private GameObject graveStone;
     [SerializeField] private Animator anim;
+    [SerializeField] private SkeletonMecanim skeletonMecanim;
 
     private EnemyBaseState currentScene;
     private bool playerInRange = false;
@@ -49,12 +52,6 @@ public class EnemyStateManager : MonoBehaviour
         if (collision.CompareTag("Player"))
             OutOfRangeEvent?.Invoke(true);
     }
-
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Player"))
-    //        playerInRange = true;
-    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {

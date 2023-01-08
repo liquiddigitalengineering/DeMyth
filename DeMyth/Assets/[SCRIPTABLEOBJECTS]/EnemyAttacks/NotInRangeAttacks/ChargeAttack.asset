@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688dc751928966d44a0b241039c95a2c, type: 3}
   m_Name: ChargeAttack
   m_EditorClassIdentifier: 
-  timeBeforeAttack: 1000
+  timeBeforeAttack: 5000

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4013c5d5968e7a946888bbb88fc54e26
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerIconSprite: {fileID: 7482667652216324306, guid: 8c36fa050098be64f8097b0f8b7b6225, type: 3}
+  - NPC1IconSprite: {fileID: 7482667652216324306, guid: 8b019a56c0ed10c479a8c54badf2bcb2, type: 3}
+  - NPC2IconSprite: {fileID: 3625043607559282579, guid: 710954091b8b4bc4aa303d89c2b60d83, type: 3}
+  - NPC3IconSprite: {fileID: 2747690628134850419, guid: 31f0edff9f886074284ea71f1d7a305d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

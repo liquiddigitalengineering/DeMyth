@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Transform = UnityEngine.Transform;
 
 public enum DirectionEnum { Left, Right, Down, Up, NoDirection}
 
@@ -9,6 +10,8 @@ public class Charge : EnemyBaseState
 {
     [Tooltip("Time before the next attack in miliseconds")]
     [SerializeField] [Min(1000f)] private int timeBeforeAttack = 1000;
+
+    private Vector2 playerPosNormalized;
 
     private void OnEnable()
     {
@@ -22,12 +25,17 @@ public class Charge : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+       playerPosNormalized  = NormalizedPlayerPosition(enemyStateManager.Player.transform, enemyStateManager.transform);
         ExecuteOperation(enemyStateManager);
 
         yield return null;
     }
 
-    public override void UpdateState(EnemyStateManager enemyStateManager) { }
+    public override void UpdateState(EnemyStateManager enemyStateManager)
+    {
+
+        enemyStateManager.gameObject.transform.position = Vector3.MoveTowards(enemyStateManager.gameObject.transform.position, enemyStateManager.Player.transform.position, 10 * Time.deltaTime);
+    }
 
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
@@ -37,7 +45,7 @@ public class Charge : EnemyBaseState
                 enemyStateManager.Anim.SetTrigger("sideCharge");
                 break;
             case DirectionEnum.Right:
-                enemyStateManager.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 180, 0);
                 enemyStateManager.Anim.SetTrigger("sideCharge");
                 break;
             case DirectionEnum.Down:
@@ -47,12 +55,11 @@ public class Charge : EnemyBaseState
                 enemyStateManager.Anim.SetTrigger("upCharge");
                 break;
         }
+
     }
 
     private DirectionEnum ChoosedDirection(EnemyStateManager enemyStateManager)
     {
-        Vector2 playerPosNormalized = (enemyStateManager.Player.transform.position - enemyStateManager.transform.position).normalized;
-
         if (playerPosNormalized.y <= -0.5)
             return DirectionEnum.Down;
 
@@ -70,7 +77,10 @@ public class Charge : EnemyBaseState
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.gameObject.transform.localScale = new Vector3(1, 1,1);
+        enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
         enemyStateManager.SwitchToIdle(timeBeforeAttack);
     }
+     
+
+    private Vector2 NormalizedPlayerPosition(Transform playerTransform, Transform enemyTransform) => (playerTransform.position -enemyTransform.position).normalized;
 }

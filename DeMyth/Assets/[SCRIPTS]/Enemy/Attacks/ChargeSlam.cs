@@ -22,11 +22,6 @@ public class ChargeSlam : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
-        float y = Mathf.Cos(Time.time * frequency) * amplitude;
-        float x = Mathf.Sin(Time.time * frequency) * amplitude;
-
-        enemyStateManager.GraveStone.transform.position = new Vector2(x,y);
-
 
     }
 

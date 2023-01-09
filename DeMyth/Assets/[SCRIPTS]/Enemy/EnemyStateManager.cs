@@ -12,16 +12,15 @@ public class EnemyStateManager : MonoBehaviour
     public Animator Anim { get => anim; }
     public GameObject Player { get => player; }
     public GameObject GraveStone { get => graveStone; }
-    public bool InRange { get => playerInRange; }
+    public Rigidbody2D Rb { get => rb; }
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
     [SerializeField] private GameObject graveStone;
     [SerializeField] private Animator anim;
     [SerializeField] private SkeletonMecanim skeletonMecanim;
-
+    [SerializeField] private Rigidbody2D rb;
     private EnemyBaseState currentScene;
-    private bool playerInRange = false;
 
     private void Awake()
     {
@@ -56,11 +55,8 @@ public class EnemyStateManager : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Player")) {
-            playerInRange = false;
-
+        if (collision.CompareTag("Player"))
             OutOfRangeEvent?.Invoke(false);
-        }
             
     }
     #endregion

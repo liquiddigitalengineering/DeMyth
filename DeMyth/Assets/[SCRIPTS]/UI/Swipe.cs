@@ -38,7 +38,7 @@ public class Swipe : MonoBehaviour
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
                 for (int j = 0; j < pos.Length; j++){
                     if (j != i){
-                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.7f, 0.7f), 0.1f); //When level button is minimized == (Vector2([SMALL_SCALE_X], [SMALL_SCALE_Y]), [FADE_SPEED]))
                     }
                 }
             }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="SpinAttack", menuName ="Attacks/Spin")]
 public class SpinAttack : EnemyBaseState
 {
+    public Action PlayerKnockedEvent;
+
     [SerializeField] private int timeBeforeNextAttack = 1000;
-    [SerializeField] private float maxPlayerTime;
+    [SerializeField] private float maxPlayerTime = 1;
 
     private float time = 0;
     private bool inRange;
@@ -15,16 +18,19 @@ public class SpinAttack : EnemyBaseState
     private void OnEnable()
     {
         EnemyStateManager.OutOfRangeEvent += StopCounting;
+        AnimationEventsHandler.SpinAttackFinishedEvent += ExitState;
     }
 
     private void OnDisable()
     {
         EnemyStateManager.OutOfRangeEvent -= StopCounting;
+        AnimationEventsHandler.SpinAttackFinishedEvent -= ExitState;
     }
     #endregion
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+        enemyStateManager.Anim.SetTrigger("spinAttack");
         inRange = false;
         this.time = 0;
         yield return new WaitForSeconds(0.1f);
@@ -39,6 +45,8 @@ public class SpinAttack : EnemyBaseState
         time += Time.deltaTime;
 
         if (time < maxPlayerTime) return;
+
+        PlayerKnockedEvent?.Invoke();
     }
     
     private void StopCounting(bool inRange)
@@ -46,7 +54,6 @@ public class SpinAttack : EnemyBaseState
         this.inRange = inRange;
 
         if(!inRange) time = 0;
-
     }
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager) { }

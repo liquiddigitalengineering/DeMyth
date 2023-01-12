@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
   m_Name: Petra 4_SkeletonData
   m_EditorClassIdentifier: 
-  atlasAssets: []
+  atlasAssets:
+  - {fileID: 11400000, guid: 3712af7b849a4054b87cac6f9496a9c3, type: 2}
   scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: ce874ab0aeeab6e4da9a0fe919f70273, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
-    applyAdditiveMaterial: 0
+    applyAdditiveMaterial: 1
     additiveMaterials: []
     multiplyMaterials: []
     screenMaterials: []
-  skeletonDataModifiers: []
+  skeletonDataModifiers:
+  - {fileID: 11400000, guid: 22c0225612a65ee4fb15bad49f644762, type: 2}
   fromAnimation: []
   toAnimation: []
   duration: []
   defaultMix: 0
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 977d21fa4be0cfd449d1f8109f7bf4d4, type: 2}

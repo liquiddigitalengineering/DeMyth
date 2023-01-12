@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3899f89d09d9824895e74cc9dc55ab2, type: 3}
   m_Name: SpinAttack
   m_EditorClassIdentifier: 
-  timeBeforeNextAttack: 1000
+  timeBeforeNextAttack: 5000
   maxPlayerTime: 4
-  time: 0

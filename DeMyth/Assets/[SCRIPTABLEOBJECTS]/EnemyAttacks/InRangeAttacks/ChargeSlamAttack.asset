@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ChargeSlamAttack
   m_EditorClassIdentifier: 
   attackTime: 5
-  timeBeforeNextAttack: 1000
+  timeBeforeNextAttack: 5000
   frequency: 2
   amplitude: 2

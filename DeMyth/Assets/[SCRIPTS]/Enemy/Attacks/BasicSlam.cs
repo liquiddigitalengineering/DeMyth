@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="BasicSlamAttack", menuName = "Attacks/BasicSlam")]
@@ -16,19 +15,38 @@ public class BasicSlam : EnemyBaseState
 
     private float timeLeft;
     private Transform playerTransform;
+    private bool canBeFollowed = false;
+
+
+    private void OnEnable()
+    {
+        AnimationEventsHandler.BasicSlamFinishedEvent += EventMethod;
+    }
+
+    private void OnDisable()
+    {
+        AnimationEventsHandler.BasicSlamFinishedEvent -= EventMethod;
+    }
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
-    {      
-        playerTransform = enemyStateManager.Player.transform;
-        enemyStateManager.GraveStone.transform.position = playerTransform.position;
-        enemyStateManager.GraveStone.SetActive(true);
-
+    {
+        enemyStateManager.Anim.SetTrigger("basicSlam");
         timeLeft = playerFollowTime;
         yield return new WaitForSeconds(0.1f);
     }
 
+    private void EventMethod(EnemyStateManager enemyStateManager)
+    {
+        playerTransform = enemyStateManager.Player.transform;
+        enemyStateManager.GraveStone.transform.position = playerTransform.position;
+        enemyStateManager.GraveStone.SetActive(true);
+
+        canBeFollowed = true;
+    }
+
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
+        if (!canBeFollowed) return;
         if (timeLeft <= 0) ExitState(enemyStateManager);
 
         ExecuteOperation(enemyStateManager);

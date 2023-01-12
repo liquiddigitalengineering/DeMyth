@@ -14,8 +14,9 @@ public class Idle : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+        float timeInSeconds = time / 1000;
         ExecuteOperation(enemyStateManager);
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(timeInSeconds);
         ExitState(enemyStateManager);
     }
 
@@ -30,6 +31,7 @@ public class Idle : EnemyBaseState
             state = InRangeAttacks[Random.Range(0, InRangeAttacks.Count)];
         else
             state = NotInRangeAttacks[Random.Range(0, NotInRangeAttacks.Count)];
+
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager)

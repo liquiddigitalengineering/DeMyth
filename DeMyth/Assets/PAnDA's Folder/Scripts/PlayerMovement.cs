@@ -20,8 +20,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
+        //doesnt allow the player to move while he chats with a NPC
+        if(DialogueManager.instance.dialogueIsPlaying) { rb.velocity = Vector2.zero; return; }
+
         Inputs();
         
         Move();

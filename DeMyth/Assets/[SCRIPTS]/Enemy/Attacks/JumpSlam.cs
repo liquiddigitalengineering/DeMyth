@@ -16,12 +16,26 @@ public class JumpSlam : EnemyBaseState
 
     private Vector2 playerTransform;
     private bool canBeFollowed = false;
+    private bool playerInRange = false;
+
+    #region OnEnable & OnDisable
+    private void OnEnable()
+    {
+        EnemyStateManager.OutOfRangeEvent += InRange;
+    }
+
+    private void OnDisable()
+    {
+        EnemyStateManager.OutOfRangeEvent -= InRange;
+    }
+    #endregion
+
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+        enemyStateManager.Anim.SetTrigger("jumpSlam");
         canBeFollowed = false;
-        yield return new WaitForSeconds(2f);
-        ExecuteOperation(enemyStateManager);
         yield return new WaitForSeconds(1f);
+        ExecuteOperation(enemyStateManager);
         canBeFollowed = true;
     }
 
@@ -30,14 +44,18 @@ public class JumpSlam : EnemyBaseState
         if (!canBeFollowed) return;
 
         enemyStateManager.gameObject.transform.position = Vector3.MoveTowards(enemyStateManager.gameObject.transform.position, playerTransform, speed * Time.deltaTime);
+
+        if (!playerInRange) return;
+
+        ExitState(enemyStateManager);
+            
     }
+
+    private void InRange(bool inRange) => playerInRange = inRange;
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.gameObject.transform.position += new Vector3(0, height);
-
         playerTransform = enemyStateManager.Player.transform.position;
-       
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager)

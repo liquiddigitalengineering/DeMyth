@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8af36fddb6a17141b4141fa64a1dd98, type: 3}
-  m_Name: BasicSlamAttack
+  m_Script: {fileID: 11500000, guid: d40cb99fd5c8bfc43874ac3cd4652e68, type: 3}
+  m_Name: ChargeSlamAttack
   m_EditorClassIdentifier: 
-  playerFollowTime: 5
-  timeBeforeNextAttack: 1000
-  graveStoneSpeed: 1
+  attackTime: 5
+  timeBeforeNextAttack: 5000
+  frequency: 2
+  amplitude: 2

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40cb99fd5c8bfc43874ac3cd4652e68, type: 3}
-  m_Name: ChargeSlamAttack
+  m_Script: {fileID: 11500000, guid: d3899f89d09d9824895e74cc9dc55ab2, type: 3}
+  m_Name: SpinAttack
   m_EditorClassIdentifier: 
-  attackTime: 5
-  timeBeforeNextAttack: 1000
-  frequency: 2
-  amplitude: 2
+  timeBeforeNextAttack: 5000
+  maxPlayerTime: 4

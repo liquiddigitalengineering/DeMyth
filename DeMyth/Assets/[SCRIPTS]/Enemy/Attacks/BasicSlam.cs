@@ -40,6 +40,7 @@ public class BasicSlam : EnemyBaseState
         playerTransform = enemyStateManager.Player.transform;
         enemyStateManager.GraveStone.transform.position = playerTransform.position;
         enemyStateManager.GraveStone.SetActive(true);
+    
 
         canBeFollowed = true;
     }
@@ -62,6 +63,7 @@ public class BasicSlam : EnemyBaseState
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
+        enemyStateManager.GraveStone.GetComponent<Animator>().SetTrigger("despawn");
         enemyStateManager.GraveStone.SetActive(false);
         enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
     }

@@ -13,6 +13,8 @@ public class EnemyStateManager : MonoBehaviour
     public GameObject Player { get => player; }
     public GameObject GraveStone { get => graveStone; }
     public Rigidbody2D Rb { get => rb; }
+    public Collider2D Col { get => col; }
+    public bool InRange { get; private set; }
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
@@ -20,7 +22,19 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private SkeletonMecanim skeletonMecanim;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Collider2D col;
+
     private EnemyBaseState currentScene;
+
+    private void OnEnable()
+    {
+        Idle.OnStateChange += SwitchStates;
+    }
+
+    private void OnDisable()
+    {
+        Idle.OnStateChange -= SwitchStates;
+    }
 
     private void Awake()
     {
@@ -35,6 +49,7 @@ public class EnemyStateManager : MonoBehaviour
 
     public void SwitchStates(EnemyBaseState state)
     {
+        graveStone.SetActive(false);
         currentScene = state;
         StartCoroutine(state.EnterState(this, 0));
     }
@@ -48,15 +63,21 @@ public class EnemyStateManager : MonoBehaviour
     #region triggers
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player")) {
+            InRange = true;
             OutOfRangeEvent?.Invoke(true);
+        }
+            
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player")) {
             OutOfRangeEvent?.Invoke(false);
+            InRange = false;
+        }
+           
             
     }
     #endregion

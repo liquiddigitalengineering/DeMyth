@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BasicSlamAttack
   m_EditorClassIdentifier: 
   playerFollowTime: 5
-  timeBeforeNextAttack: 5000
-  graveStoneSpeed: 1
+  timeBeforeNextAttack: 3000
+  maxGraveStoneSpeed: 15
   graveStoneDamage: 0

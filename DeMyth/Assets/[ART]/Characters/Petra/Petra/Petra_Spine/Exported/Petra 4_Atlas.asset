@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Petra 4_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 472a3ba8123bbfa40a6829189ca3495f, type: 3}
+  materials:
+  - {fileID: 2100000, guid: befab2e26a36ae04f831337c9c5a8a51, type: 2}
+  - {fileID: 2100000, guid: 1e93c4b159003b44d8345924a7a663ff, type: 2}
+  - {fileID: 2100000, guid: 1109c26013ea78947a420a040e0fdca8, type: 2}
+  - {fileID: 2100000, guid: 890fcf42d6667c044a2d37166c4cc7c5, type: 2}

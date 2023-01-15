@@ -10,7 +10,7 @@ public class BasicSlam : EnemyBaseState
     [SerializeField] private int timeBeforeNextAttack = 1000;
     [Header("Grave stone settings")]
 
-    [SerializeField] [Min(0)] private float graveStoneSpeed;
+    [SerializeField] [Min(9)] private float maxGraveStoneSpeed;
     [SerializeField][Min(0)] private float graveStoneDamage;
 
     private float timeLeft;
@@ -35,15 +35,7 @@ public class BasicSlam : EnemyBaseState
         yield return new WaitForSeconds(0.1f);
     }
 
-    private void EventMethod(EnemyStateManager enemyStateManager)
-    {
-        playerTransform = enemyStateManager.Player.transform;
-        enemyStateManager.GraveStone.transform.position = playerTransform.position;
-        enemyStateManager.GraveStone.SetActive(true);
-    
 
-        canBeFollowed = true;
-    }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
@@ -58,7 +50,7 @@ public class BasicSlam : EnemyBaseState
     {
         playerTransform = enemyStateManager.Player.transform;
 
-        enemyStateManager.GraveStone.transform.position = Vector3.MoveTowards(enemyStateManager.GraveStone.transform.position, playerTransform.position, graveStoneSpeed * Time.deltaTime);
+        enemyStateManager.GraveStone.transform.position = Vector3.MoveTowards(enemyStateManager.GraveStone.transform.position, playerTransform.position, GraveStoneSpeed() * Time.deltaTime);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager)
@@ -66,5 +58,17 @@ public class BasicSlam : EnemyBaseState
         enemyStateManager.GraveStone.GetComponent<Animator>().SetTrigger("despawn");
         enemyStateManager.GraveStone.SetActive(false);
         enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
+    }
+
+    private float GraveStoneSpeed() => Random.Range(8, maxGraveStoneSpeed);
+
+    private void EventMethod(EnemyStateManager enemyStateManager)
+    {
+        playerTransform = enemyStateManager.Player.transform;
+        enemyStateManager.GraveStone.transform.position = playerTransform.position;
+        enemyStateManager.GraveStone.SetActive(true);
+
+
+        canBeFollowed = true;
     }
 }

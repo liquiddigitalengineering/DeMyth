@@ -1,16 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "IdleAttack", menuName = "Attacks/Idle")]
 public class Idle : EnemyBaseState
 {
-    [Min(1)][SerializeField] private float enemyRange = 1;
+    public static Action<EnemyBaseState> OnStateChange;
+
     [SerializeField] private List<EnemyBaseState> InRangeAttacks;
     [SerializeField] private List<EnemyBaseState> NotInRangeAttacks;
-   
+    [Header("When player is in close range")]
+    [SerializeField] private SpinAttack spinAttack;
+    [SerializeField] private float timeBeforeNextSpinAttack;
+
     private EnemyBaseState state;
+    private bool isNear, isUsingSpin;
+    private float timeLeft;
+
+    private void OnEnable()
+    {
+        EnemyStateManager.OutOfRangeEvent += InRange;
+    }
+
+    private void OnDisable()
+    {
+        EnemyStateManager.OutOfRangeEvent -= InRange;
+    }
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
@@ -20,13 +38,16 @@ public class Idle : EnemyBaseState
         ExitState(enemyStateManager);
     }
 
-    public override void UpdateState(EnemyStateManager enemyStateManager) { }
+    public override void UpdateState(EnemyStateManager enemyStateManager) 
+    { 
+        timeLeft -= Time.deltaTime;
+
+        if (timeLeft > 0) return;
+        isUsingSpin = false;
+    }
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
-        float distance = Vector2.Distance(enemyStateManager.gameObject.transform.position, enemyStateManager.Player.transform.position);
-        bool isNear = distance <= enemyRange;
-
         if (isNear)
             state = InRangeAttacks[Random.Range(0, InRangeAttacks.Count)];
         else
@@ -36,6 +57,18 @@ public class Idle : EnemyBaseState
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
+        if (isUsingSpin) return;
         enemyStateManager.SwitchStates(state);
+    }
+
+    private void InRange(bool inRange)
+    {  
+        isNear = inRange;
+
+        if (!inRange || timeLeft > 0) return;
+
+        timeLeft = timeBeforeNextSpinAttack;
+        OnStateChange(spinAttack);
+        isUsingSpin = true;
     }
 }

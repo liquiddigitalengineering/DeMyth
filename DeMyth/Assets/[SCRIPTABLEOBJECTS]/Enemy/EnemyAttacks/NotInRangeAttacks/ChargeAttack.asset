@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ChargeAttack
   m_EditorClassIdentifier: 
   timeBeforeAttack: 5000
+  speed: 20

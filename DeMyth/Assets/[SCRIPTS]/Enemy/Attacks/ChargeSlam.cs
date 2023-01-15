@@ -8,8 +8,6 @@ public class ChargeSlam : EnemyBaseState
     [SerializeField] private float attackTime;
     [Tooltip("In milliseconds")]
     [SerializeField] private int timeBeforeNextAttack = 1000;
-    [SerializeField] private float frequency;
-    [SerializeField] private float amplitude;
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager,int time)
     {

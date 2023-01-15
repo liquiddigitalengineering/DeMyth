@@ -6,13 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="SpinAttack", menuName ="Attacks/Spin")]
 public class SpinAttack : EnemyBaseState
 {
-    public Action PlayerKnockedEvent;
+    public static Action<Transform> PlayerKnockedEvent;
 
     [SerializeField] private int timeBeforeNextAttack = 1000;
     [SerializeField] private float maxPlayerTime = 1;
 
     private float time = 0;
-    private bool inRange;
+    private bool playerInRange = false;
 
     #region OnEnable & OnDisable
     private void OnEnable()
@@ -30,8 +30,8 @@ public class SpinAttack : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+        playerInRange = true;
         enemyStateManager.Anim.SetTrigger("spinAttack");
-        inRange = false;
         this.time = 0;
         yield return new WaitForSeconds(0.1f);
     }
@@ -40,20 +40,19 @@ public class SpinAttack : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
-        if (!inRange) return;
+        Debug.Log(playerInRange);
+        if (!playerInRange) return;
         
         time += Time.deltaTime;
-
         if (time < maxPlayerTime) return;
 
-        PlayerKnockedEvent?.Invoke();
+        PlayerKnockedEvent?.Invoke(enemyStateManager.transform);
     }
     
     private void StopCounting(bool inRange)
-    {
-        this.inRange = inRange;
-
-        if(!inRange) time = 0;
+    {     
+        playerInRange = inRange;
+        if (!inRange) time = 0;
     }
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager) { }

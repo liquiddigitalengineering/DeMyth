@@ -11,7 +11,10 @@ public class Charge : EnemyBaseState
     [Tooltip("Time before the next attack in miliseconds")]
     [SerializeField] [Min(1000f)] private int timeBeforeAttack = 1000;
 
+    [SerializeField] private float speed = 10f;
+
     private Vector2 playerPosNormalized;
+    private Vector2 playerTransform;
 
     private void OnEnable()
     {
@@ -25,7 +28,7 @@ public class Charge : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
-       playerPosNormalized  = NormalizedPlayerPosition(enemyStateManager.Player.transform, enemyStateManager.transform);
+        playerPosNormalized  = NormalizedPlayerPosition(enemyStateManager.Player.transform, enemyStateManager.transform);
         ExecuteOperation(enemyStateManager);
 
         yield return null;
@@ -33,8 +36,7 @@ public class Charge : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
-
-        enemyStateManager.gameObject.transform.position = Vector3.MoveTowards(enemyStateManager.gameObject.transform.position, enemyStateManager.Player.transform.position, 10 * Time.deltaTime);
+        enemyStateManager.gameObject.transform.position = Vector3.MoveTowards(enemyStateManager.gameObject.transform.position, playerTransform, speed * Time.deltaTime);
     }
 
 
@@ -55,6 +57,8 @@ public class Charge : EnemyBaseState
                 enemyStateManager.Anim.SetTrigger("upCharge");
                 break;
         }
+
+        playerTransform = enemyStateManager.Player.transform.position;
 
     }
 

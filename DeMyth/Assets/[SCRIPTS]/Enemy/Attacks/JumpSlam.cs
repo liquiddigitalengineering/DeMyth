@@ -7,51 +7,52 @@ public class JumpSlam : EnemyBaseState
 {
     [Tooltip("In milliseconds")]
     [SerializeField] private int timeBeforeNextAttack = 500;
-    [Header("How high should enemy jump")]
-    [SerializeField] private float height = 2;
     [Header("How fast should enemy move")]
-    [SerializeField] private float speed = 2;
+    [SerializeField] private float speed = 3;
     [Header("Attack damage")]
     [SerializeField] private float attackDamage;
 
-    private Vector2 playerTransform;
+    private Vector3 playerTransform;
     private bool canBeFollowed = false;
-    private bool playerInRange = false;
 
     #region OnEnable & OnDisable
     private void OnEnable()
     {
-        EnemyStateManager.OutOfRangeEvent += InRange;
+        AnimationEventsHandler.JumpAttackFisnihedEvent += ExitState;
     }
 
     private void OnDisable()
     {
-        EnemyStateManager.OutOfRangeEvent -= InRange;
+        AnimationEventsHandler.JumpAttackFisnihedEvent -= ExitState;
     }
     #endregion
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
-        enemyStateManager.Anim.SetTrigger("jumpSlam");
+        enemyStateManager.Col.enabled = false;
+        LookDirection(enemyStateManager);
+        enemyStateManager.Anim.SetTrigger("jump");
         canBeFollowed = false;
-        yield return new WaitForSeconds(1f);
         ExecuteOperation(enemyStateManager);
-        canBeFollowed = true;
+        yield return new WaitForSeconds(0.5f);
+       
+        canBeFollowed = true; 
     }
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
-        if (!canBeFollowed) return;
+        if (canBeFollowed == false) return;
 
         enemyStateManager.gameObject.transform.position = Vector3.MoveTowards(enemyStateManager.gameObject.transform.position, playerTransform, speed * Time.deltaTime);
 
-        if (!playerInRange) return;
-
-        ExitState(enemyStateManager);
-            
+        if(enemyStateManager.transform.position == playerTransform) {
+            enemyStateManager.Anim.speed = 1;
+            Debug.Log("yup, its same");
+        }
+           
     }
 
-    private void InRange(bool inRange) => playerInRange = inRange;
+   
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
@@ -60,6 +61,20 @@ public class JumpSlam : EnemyBaseState
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
+        enemyStateManager.Col.enabled = true;
         enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
     }
+
+
+    #region other methods
+    private void LookDirection(EnemyStateManager enemyStateManager)
+    {
+        Vector2 playerPosNormalized = (enemyStateManager.Player.transform.position - enemyStateManager.transform.position).normalized;
+        if (playerPosNormalized.x >= 0.5)
+            enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 180, 0);
+        else if (playerPosNormalized.x <= -0.5)
+            enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    #endregion
 }

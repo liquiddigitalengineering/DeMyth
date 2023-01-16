@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="BasicSlamAttack", menuName = "Attacks/BasicSlam")]
 public class BasicSlam : EnemyBaseState
 {
+    public float GetGraveStoneDamage { get => graveStoneDamage; }
+
     [Min(0)][SerializeField] private float playerFollowTime;
     [Tooltip("In milliseconds")]
     [SerializeField] private int timeBeforeNextAttack = 1000;

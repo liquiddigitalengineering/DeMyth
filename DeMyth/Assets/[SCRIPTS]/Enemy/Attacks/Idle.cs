@@ -8,7 +8,10 @@ using Random = UnityEngine.Random;
 [CreateAssetMenu(fileName = "IdleAttack", menuName = "Attacks/Idle")]
 public class Idle : EnemyBaseState
 {
-    public static Action<EnemyBaseState> OnStateChange;
+    /// <summary>
+    /// Event is called when the player is near the enemy, so enemy can be switched to spin attack
+    /// </summary>
+    public static Action<EnemyBaseState> OnStateChanged;
 
     [SerializeField] private List<EnemyBaseState> InRangeAttacks;
     [SerializeField] private List<EnemyBaseState> NotInRangeAttacks;
@@ -22,12 +25,12 @@ public class Idle : EnemyBaseState
 
     private void OnEnable()
     {
-        EnemyStateManager.OutOfRangeEvent += InRange;
+        EnemyStateManager.OnRangeChanged += InRange;
     }
 
     private void OnDisable()
     {
-        EnemyStateManager.OutOfRangeEvent -= InRange;
+        EnemyStateManager.OnRangeChanged -= InRange;
     }
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
@@ -68,7 +71,7 @@ public class Idle : EnemyBaseState
         if (!inRange || timeLeft > 0) return;
 
         timeLeft = timeBeforeNextSpinAttack;
-        OnStateChange(spinAttack);
+        OnStateChanged(spinAttack);
         isUsingSpin = true;
     }
 }

@@ -17,13 +17,13 @@ public class SpinAttack : EnemyBaseState
     #region OnEnable & OnDisable
     private void OnEnable()
     {
-        EnemyStateManager.OutOfRangeEvent += StopCounting;
+        EnemyStateManager.OnRangeChanged += StopCounting;
         AnimationEventsHandler.SpinAttackFinishedEvent += ExitState;
     }
 
     private void OnDisable()
     {
-        EnemyStateManager.OutOfRangeEvent -= StopCounting;
+        EnemyStateManager.OnRangeChanged -= StopCounting;
         AnimationEventsHandler.SpinAttackFinishedEvent -= ExitState;
     }
     #endregion
@@ -40,7 +40,6 @@ public class SpinAttack : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
-        Debug.Log(playerInRange);
         if (!playerInRange) return;
         
         time += Time.deltaTime;

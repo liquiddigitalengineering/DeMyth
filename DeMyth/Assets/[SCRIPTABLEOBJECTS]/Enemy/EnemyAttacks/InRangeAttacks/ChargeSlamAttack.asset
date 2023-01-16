@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackTime: 5
   timeBeforeNextAttack: 3000
+  exitState: 8
+  frequency: 4
+  amplitude: 4

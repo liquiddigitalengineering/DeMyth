@@ -47,7 +47,6 @@ public class JumpSlam : EnemyBaseState
 
         if(enemyStateManager.transform.position == playerTransform) {
             enemyStateManager.Anim.speed = 1;
-            Debug.Log("yup, its same");
         }
            
     }
@@ -61,6 +60,7 @@ public class JumpSlam : EnemyBaseState
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
+        enemyStateManager.GetDamageManager.DamagePlayer(attackDamage);
         enemyStateManager.Col.enabled = true;
         enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
     }
@@ -70,9 +70,9 @@ public class JumpSlam : EnemyBaseState
     private void LookDirection(EnemyStateManager enemyStateManager)
     {
         Vector2 playerPosNormalized = (enemyStateManager.Player.transform.position - enemyStateManager.transform.position).normalized;
-        if (playerPosNormalized.x >= 0.5)
+        if (playerPosNormalized.x >= 0)
             enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 180, 0);
-        else if (playerPosNormalized.x <= -0.5)
+        else if (playerPosNormalized.x < 0)
             enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 

@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    public static Action<bool> OutOfRangeEvent;
+    /// <summary>
+    /// Is triggered whenever the player leaves or enters enemy's range zone
+    /// </summary>
+    public static Action<bool> OnRangeChanged;
 
     public SkeletonMecanim Skeleton { get => skeletonMecanim; }
     public Animator Anim { get => anim; }
@@ -15,6 +18,7 @@ public class EnemyStateManager : MonoBehaviour
     public Rigidbody2D Rb { get => rb; }
     public Collider2D Col { get => col; }
     public bool InRange { get; private set; }
+    public DamageManager GetDamageManager { get => damageManager; }
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
@@ -23,17 +27,18 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private SkeletonMecanim skeletonMecanim;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;
+    [SerializeField] private DamageManager damageManager;
 
     private EnemyBaseState currentScene;
 
     private void OnEnable()
     {
-        Idle.OnStateChange += SwitchStates;
+        Idle.OnStateChanged += SwitchStates;
     }
 
     private void OnDisable()
     {
-        Idle.OnStateChange -= SwitchStates;
+        Idle.OnStateChanged -= SwitchStates;
     }
 
     private void Awake()
@@ -65,7 +70,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             InRange = true;
-            OutOfRangeEvent?.Invoke(true);
+            OnRangeChanged?.Invoke(true);
         }
             
     }
@@ -74,7 +79,7 @@ public class EnemyStateManager : MonoBehaviour
     {
 
         if (collision.CompareTag("Player")) {
-            OutOfRangeEvent?.Invoke(false);
+            OnRangeChanged?.Invoke(false);
             InRange = false;
         }
            

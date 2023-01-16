@@ -136,12 +136,13 @@ GameObject:
   - component: {fileID: 227767470}
   - component: {fileID: 227767469}
   - component: {fileID: 227767468}
-  - component: {fileID: 227767473}
   - component: {fileID: 227767474}
   - component: {fileID: 227767475}
+  - component: {fileID: 227767478}
+  - component: {fileID: 227767473}
   - component: {fileID: 227767476}
   - component: {fileID: 227767477}
-  - component: {fileID: 227767478}
+  - component: {fileID: 227767479}
   m_Layer: 0
   m_Name: '[ENEMY] Petra'
   m_TagString: Enemy
@@ -293,6 +294,7 @@ MonoBehaviour:
   skeletonMecanim: {fileID: 227767468}
   rb: {fileID: 227767475}
   col: {fileID: 227767474}
+  damageManager: {fileID: 227767479}
 --- !u!58 &227767474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -384,6 +386,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.46146, y: 7.8825984}
   m_EdgeRadius: 0
+--- !u!114 &227767479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227767467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a245a4d8df901c643a635c4aa64059fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &352648010
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472572208}
   m_LocalRotation: {x: -0.67559016, y: 0.7372774, z: -0, w: 0}
-  m_LocalPosition: {x: 6.21, y: 3.92, z: -0.026085746}
+  m_LocalPosition: {x: -0.74, y: 3.04, z: -0.026085746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -699,6 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79dc701f5117e048b6a4e798603d372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageManager: {fileID: 0}
+  slam: {fileID: 11400000, guid: 8583ef4dd8684f7458d3acbda265ba97, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,8 +766,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 130
+  orthographic: 0
   orthographic size: 20
   m_Depth: -1
   m_CullingMask:

@@ -35,6 +35,9 @@ public class Idle : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+        isNear = enemyStateManager.InRange;
+
+        isUsingSpin = false;
         float timeInSeconds = time / 1000;
         ExecuteOperation(enemyStateManager);
         yield return new WaitForSeconds(timeInSeconds);

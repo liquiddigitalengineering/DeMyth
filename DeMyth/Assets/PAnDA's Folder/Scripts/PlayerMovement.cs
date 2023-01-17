@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
     #region Knockback
     private void KnockBack(Transform enemyTransform)
     {
+        Debug.Log("knockbacked");
         isKnockbacked = true;
         knockbackPosition = transform.position - enemyTransform.position;
 

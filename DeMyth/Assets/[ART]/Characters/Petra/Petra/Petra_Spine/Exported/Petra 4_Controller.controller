@@ -401,14 +401,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.6
+  - time: 0.55
     functionName: StopTheAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.78333336
+  - time: 0.76666665
     functionName: StartNextAnim
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -576,7 +576,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.5
+  - time: 1.3333334
     functionName: ChargeAttackFinished
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -725,7 +725,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.3333334
-    functionName: JumpAttackFinished
+    functionName: 
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -959,7 +959,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.5
+  - time: 1.3333334
     functionName: ChargeAttackFinished
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -1376,7 +1376,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.5
+  - time: 1.3333334
     functionName: SpinAttackFinished
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -1617,7 +1617,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.5
+  - time: 1.4166666
     functionName: ChargeAttackFinished
     data: 
     objectReferenceParameter: {fileID: 0}

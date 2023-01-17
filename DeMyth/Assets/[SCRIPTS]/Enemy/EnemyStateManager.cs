@@ -29,7 +29,7 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private Collider2D col;
     [SerializeField] private DamageManager damageManager;
 
-    private EnemyBaseState currentScene;
+    private EnemyBaseState currentState;
 
     private void OnEnable()
     {
@@ -41,28 +41,29 @@ public class EnemyStateManager : MonoBehaviour
         Idle.OnStateChanged -= SwitchStates;
     }
 
-    private void Awake()
+    private void Start()
     {
-        currentScene = initialState;
-        StartCoroutine(currentScene.EnterState(this, 0));
+        currentState = initialState;
+        StartCoroutine(currentState.EnterState(this, 1000));
     }
 
     private void Update()
     {
-        currentScene.UpdateState(this);
+        Debug.Log(InRange);
+        currentState.UpdateState(this);
     }
 
     public void SwitchStates(EnemyBaseState state)
     {
         graveStone.SetActive(false);
-        currentScene = state;
+        currentState = state;
         StartCoroutine(state.EnterState(this, 0));
     }
 
     public void SwitchToIdle(int time)
     {
-        currentScene = initialState;
-        StartCoroutine(currentScene.EnterState(this, time));
+        currentState = initialState;
+        StartCoroutine(currentState.EnterState(this, time));
     }
 
     #region triggers

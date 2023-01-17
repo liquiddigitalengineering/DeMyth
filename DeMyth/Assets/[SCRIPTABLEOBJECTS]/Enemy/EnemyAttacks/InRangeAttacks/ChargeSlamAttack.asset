@@ -15,5 +15,5 @@ MonoBehaviour:
   attackTime: 5
   timeBeforeNextAttack: 3000
   exitState: 8
-  frequency: 4
+  frequency: 5
   amplitude: 4

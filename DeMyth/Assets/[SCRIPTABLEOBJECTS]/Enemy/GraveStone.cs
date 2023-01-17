@@ -18,7 +18,8 @@ public class GraveStone : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            damageManager.DamagePlayer(damage);
+            Debug.Log("Player lol");
+            //damageManager.DamagePlayer(damage);
     }
 
     public void DisableStone() => this.gameObject.SetActive(false);

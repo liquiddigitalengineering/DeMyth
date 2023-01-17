@@ -17,12 +17,12 @@ public class AnimationEventsHandler : MonoBehaviour
     public void BasicSlamFinished() => BasicSlamFinishedEvent?.Invoke(enemyStateManager);
     public void ChargeAttackFinished() => ChargeAttackFisnihedEvent?.Invoke(enemyStateManager);
     public void StopTheAnimation() => anim.speed = 0;
+
     public void StartNextAnim()
     {
-        if (enemyStateManager.InRange)
-            anim.SetTrigger("jumpSlam");
-        else
-            anim.SetTrigger("idle");
+        if (enemyStateManager.InRange) anim.SetTrigger("jumpSlam");
+        else anim.SetTrigger("idle");
     }
+
     public void JumpAttackFinished() => JumpAttackFisnihedEvent?.Invoke(enemyStateManager);
 }

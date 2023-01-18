@@ -6,8 +6,7 @@ using UnityEngine;
 public class ChargeSlam : EnemyBaseState
 {
     [SerializeField] private float attackTime;
-    [Tooltip("In milliseconds")]
-    [SerializeField] private int timeBeforeNextAttack = 1000;
+    [SerializeField] private int timeBeforeNextAttack = 1;
     [SerializeField] private float exitState = 5;
     [SerializeField] private float frequency;
     [SerializeField] private float amplitude;

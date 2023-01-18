@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyStateManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class EnemyStateManager : MonoBehaviour
     public Collider2D Col { get => col; }
     public bool InRange { get; private set; }
     public DamageManager GetDamageManager { get => damageManager; }
+    public Light2D GetLight2D { get => light2D; }
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
@@ -28,6 +30,7 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;
     [SerializeField] private DamageManager damageManager;
+    [SerializeField] private Light2D light2D;
 
     private EnemyBaseState currentState;
 
@@ -44,12 +47,11 @@ public class EnemyStateManager : MonoBehaviour
     private void Start()
     {
         currentState = initialState;
-        StartCoroutine(currentState.EnterState(this, 1000));
+        StartCoroutine(currentState.EnterState(this, 1));
     }
 
     private void Update()
     {
-        Debug.Log(InRange);
         currentState.UpdateState(this);
     }
 
@@ -57,7 +59,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         graveStone.SetActive(false);
         currentState = state;
-        StartCoroutine(state.EnterState(this, 0));
+        StartCoroutine(state.EnterState(this, 1));
     }
 
     public void SwitchToIdle(int time)

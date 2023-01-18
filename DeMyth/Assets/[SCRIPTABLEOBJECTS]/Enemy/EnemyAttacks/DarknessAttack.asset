@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40cb99fd5c8bfc43874ac3cd4652e68, type: 3}
-  m_Name: ChargeSlamAttack
+  m_Script: {fileID: 11500000, guid: c46afc459f7f3204998123f2107566f1, type: 3}
+  m_Name: DarknessAttack
   m_EditorClassIdentifier: 
-  attackTime: 5
-  timeBeforeNextAttack: 3
-  exitState: 8
-  frequency: 5
-  amplitude: 4
+  attackDuration: 6
+  timeBeforeNextAttack: 1

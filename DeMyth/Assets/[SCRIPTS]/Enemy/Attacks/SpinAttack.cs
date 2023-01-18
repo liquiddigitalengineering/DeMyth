@@ -8,7 +8,7 @@ public class SpinAttack : EnemyBaseState
 {
     public static Action<Transform> PlayerKnockedEvent;
 
-    [SerializeField] private int timeBeforeNextAttack = 1000;
+    [SerializeField] private int timeBeforeNextAttack = 1;
     [SerializeField] private float maxPlayerTime = 1;
 
     private float time = 0;

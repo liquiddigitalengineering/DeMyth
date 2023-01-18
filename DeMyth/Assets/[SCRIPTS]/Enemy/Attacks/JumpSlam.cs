@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "JumpSlamAttack", menuName = "Attacks/JumpSlam")]
 public class JumpSlam : EnemyBaseState
 {
-    [Tooltip("In milliseconds")]
-    [SerializeField] private int timeBeforeNextAttack = 500;
+    [SerializeField] private int timeBeforeNextAttack = 1;
     [Header("How fast should enemy move")]
     [SerializeField] private float speed = 3;
     [Header("Attack damage")]

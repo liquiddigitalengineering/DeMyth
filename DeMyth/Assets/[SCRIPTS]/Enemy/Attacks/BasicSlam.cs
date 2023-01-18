@@ -8,8 +8,7 @@ public class BasicSlam : EnemyBaseState
     public float GetGraveStoneDamage { get => graveStoneDamage; }
 
     [Min(0)][SerializeField] private float playerFollowTime;
-    [Tooltip("In milliseconds")]
-    [SerializeField] private int timeBeforeNextAttack = 1000;
+    [SerializeField] private int timeBeforeNextAttack = 1;
     [Header("Grave stone settings")]
 
     [SerializeField] [Min(9)] private float maxGraveStoneSpeed;

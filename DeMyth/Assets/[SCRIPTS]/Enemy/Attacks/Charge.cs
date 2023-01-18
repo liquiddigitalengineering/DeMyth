@@ -8,8 +8,7 @@ public enum DirectionEnum { Left, Right, Down, Up, NoDirection}
 [CreateAssetMenu(fileName = "ChargeAttack", menuName = "Attacks/ChargeAttack")]
 public class Charge : EnemyBaseState
 {
-    [Tooltip("Time before the next attack in miliseconds")]
-    [SerializeField] [Min(1000f)] private int timeBeforeAttack = 1000;
+    [SerializeField] [Min(1000f)] private int timeBeforeAttack = 1;
 
     [SerializeField] private float speed = 10f;
 

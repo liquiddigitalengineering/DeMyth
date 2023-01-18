@@ -38,9 +38,8 @@ public class Idle : EnemyBaseState
         isNear = enemyStateManager.InRange;
 
         isUsingSpin = false;
-        float timeInSeconds = time / 1000;
         ExecuteOperation(enemyStateManager);
-        yield return new WaitForSeconds(timeInSeconds);
+        yield return new WaitForSeconds(time);
         ExitState(enemyStateManager);
     }
 

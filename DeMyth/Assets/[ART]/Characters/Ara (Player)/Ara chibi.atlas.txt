@@ -1,0 +1,125 @@
+
+Ara chibi.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back Hair
+  rotate: true
+  xy: 2, 48
+  size: 462, 346
+  orig: 462, 346
+  offset: 0, 0
+  index: -1
+Face
+  rotate: true
+  xy: 802, 2
+  size: 223, 125
+  orig: 223, 125
+  offset: 0, 0
+  index: -1
+Front Hair
+  rotate: true
+  xy: 350, 145
+  size: 365, 214
+  orig: 365, 214
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 566, 227
+  size: 283, 253
+  orig: 283, 253
+  offset: 0, 0
+  index: -1
+Hips
+  rotate: false
+  xy: 116, 14
+  size: 116, 32
+  orig: 116, 32
+  offset: 0, 0
+  index: -1
+L Hand
+  rotate: false
+  xy: 549, 38
+  size: 35, 49
+  orig: 35, 49
+  offset: 0, 0
+  index: -1
+L L Hand
+  rotate: false
+  xy: 513, 21
+  size: 34, 66
+  orig: 34, 66
+  offset: 0, 0
+  index: -1
+L L Leg
+  rotate: true
+  xy: 387, 17
+  size: 59, 124
+  orig: 59, 124
+  offset: 0, 0
+  index: -1
+L U Hand
+  rotate: true
+  xy: 486, 89
+  size: 54, 98
+  orig: 54, 98
+  offset: 0, 0
+  index: -1
+L U Leg
+  rotate: false
+  xy: 821, 257
+  size: 98, 132
+  orig: 98, 132
+  offset: 0, 0
+  index: -1
+R Hand
+  rotate: true
+  xy: 549, 2
+  size: 34, 36
+  orig: 34, 36
+  offset: 0, 0
+  index: -1
+R L Hand
+  rotate: true
+  xy: 323, 8
+  size: 38, 62
+  orig: 38, 62
+  offset: 0, 0
+  index: -1
+R L Leg
+  rotate: true
+  xy: 2, 11
+  size: 35, 112
+  orig: 35, 112
+  offset: 0, 0
+  index: -1
+R U Hand
+  rotate: true
+  xy: 234, 4
+  size: 42, 87
+  orig: 42, 87
+  offset: 0, 0
+  index: -1
+R U Leg
+  rotate: true
+  xy: 350, 78
+  size: 65, 134
+  orig: 65, 134
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 821, 391
+  size: 119, 175
+  orig: 119, 175
+  offset: 0, 0
+  index: -1
+teplon
+  rotate: false
+  xy: 586, 46
+  size: 214, 179
+  orig: 214, 179
+  offset: 0, 0
+  index: -1

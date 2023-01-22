@@ -10,8 +10,6 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance { get; private set; }
-    
-
 
     [Header("Dialogue UI")]
     [SerializeField] GameObject dialoguePanel;
@@ -20,6 +18,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Image portraitImage;
     [SerializeField] Sprite[] portraitImages;
     private Animator layoutAnimator;
+
+
+    public event Action<string> choiceEvent;
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -120,11 +121,8 @@ public class DialogueManager : MonoBehaviour
                     layoutAnimator.Play(tagValue);
                     break;
                 case CHOICE_TAG:
-                    ContinueDialogue();
-                    //switch (tagValue)
-                    //{
-                    //    // here you can make a reward or punish system etc for the player choices
-                    //}
+                    ChoiceOption(tagValue);
+                    ContinueDialogue();                                    
                     break;
                 default:
                     Debug.LogWarning("the tag doesnt existed" + tagKey);
@@ -132,6 +130,18 @@ public class DialogueManager : MonoBehaviour
             }
 
         }
+    }
+
+    private void ChoiceOption(string tagValue)
+    {
+        Debug.Log("i am here" + tagValue);
+        if(tagValue == "endgame") 
+        {
+            // this should be called on the gamemanager to end the game
+            return;
+        }
+        choiceEvent?.Invoke(tagValue);
+        
     }
 
     private void ExitDialogue()

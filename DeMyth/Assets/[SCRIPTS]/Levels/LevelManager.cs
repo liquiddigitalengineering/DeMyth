@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
+
         levelText.text = levelInfo.LevelIndex.ToString();
 
         if (!otherData.HasLatern) return;

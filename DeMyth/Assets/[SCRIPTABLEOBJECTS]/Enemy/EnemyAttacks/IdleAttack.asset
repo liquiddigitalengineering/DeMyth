@@ -16,8 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a82600071a967334489a5bdf268edb40, type: 2}
   - {fileID: 11400000, guid: 4cfa989b915b8004a844800882c3e5ee, type: 2}
   NotInRangeAttacks:
-  - {fileID: 11400000, guid: 8583ef4dd8684f7458d3acbda265ba97, type: 2}
   - {fileID: 11400000, guid: c2ce5a52cc7a1df439fa9939527d51e0, type: 2}
-  - {fileID: 11400000, guid: bdce311275444e8478db43afb1271dcc, type: 2}
   spinAttack: {fileID: 11400000, guid: 4cfa989b915b8004a844800882c3e5ee, type: 2}
+  jumpAttack: {fileID: 11400000, guid: bdce311275444e8478db43afb1271dcc, type: 2}
   timeBeforeNextSpinAttack: 2

@@ -15,18 +15,19 @@ public class Idle : EnemyBaseState
 
     [SerializeField] private List<EnemyBaseState> InRangeAttacks;
     [SerializeField] private List<EnemyBaseState> NotInRangeAttacks;
-    [Header("When player is in close range")]
+    [Space(10)][Header("When player is in close range")]
     [SerializeField] private SpinAttack spinAttack;
+    [SerializeField] private JumpSlam jumpAttack;
     [SerializeField] private float timeBeforeNextSpinAttack;
 
     private EnemyBaseState state;
     private bool isNear, isUsingSpin;
-    private float timeLeft;
+    private float timeLeftBeforeNextSpin;
 
     private void OnEnable()
     {
         EnemyStateManager.OnRangeChanged += InRange;
-        timeLeft = timeBeforeNextSpinAttack;
+        timeLeftBeforeNextSpin = timeBeforeNextSpinAttack;
     }
 
     private void OnDisable()
@@ -47,9 +48,9 @@ public class Idle : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemyStateManager) 
     { 
-        timeLeft -= Time.deltaTime;
+        timeLeftBeforeNextSpin -= Time.deltaTime;
 
-        if (timeLeft > 0) return;
+        if (timeLeftBeforeNextSpin > 0) return;
         isUsingSpin = false;
     }
 
@@ -70,14 +71,24 @@ public class Idle : EnemyBaseState
         enemyStateManager.SwitchStates(state);
     }
 
-    private void InRange(bool inRange)
+    private void InRange(bool inRange, EnemyBaseState currentState)
     {  
         isNear = inRange;
 
-        if (!inRange || timeLeft > 0) return;
+        if (!inRange || timeLeftBeforeNextSpin > 0 || currentState == jumpAttack) return;
 
-        timeLeft = timeBeforeNextSpinAttack;
+        SpinAttack();
+    }
+
+    #region Player is near
+    /// <summary>
+    /// Triggered when the player is near the enemy, so the player can be knockbacked
+    /// </summary>
+    private void SpinAttack()
+    {
+        timeLeftBeforeNextSpin = timeBeforeNextSpinAttack;
         OnStateChanged(spinAttack);
         isUsingSpin = true;
     }
+    #endregion
 }

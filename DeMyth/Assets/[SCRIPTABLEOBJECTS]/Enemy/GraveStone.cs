@@ -11,15 +11,14 @@ public class GraveStone : MonoBehaviour
 
     private void Awake()
     {
-        damageManager = GameObject.FindGameObjectWithTag("Player").GetComponent<DamageManager>();
+        damageManager = GameObject.FindGameObjectWithTag("Enemy").GetComponent<DamageManager>();
         damage = slam.GetGraveStoneDamage; 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            Debug.Log("Player lol");
-            //damageManager.DamagePlayer(damage);
+            damageManager.DamagePlayer(damage);
     }
 
     public void DisableStone() => this.gameObject.SetActive(false);

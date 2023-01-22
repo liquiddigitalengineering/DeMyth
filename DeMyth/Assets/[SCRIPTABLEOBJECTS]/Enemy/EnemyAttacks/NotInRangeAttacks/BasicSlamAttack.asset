@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFollowTime: 5
   timeBeforeNextAttack: 3
-  maxGraveStoneSpeed: 15
-  graveStoneDamage: 0
+  maxGraveStoneSpeed: 20
+  graveStoneDamage: 10

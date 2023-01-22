@@ -20,7 +20,7 @@ public class PaperManager : MonoBehaviour
 
     private void Awake()
     {
-        if (!paperQuest.QuestActivated || levelInfo.PaperCollected) return;
+        if (!paperQuest.QuestActivated || levelInfo.PaperCollected || paperObject == null) return;
 
         paperObject.SetActive(true);
     }

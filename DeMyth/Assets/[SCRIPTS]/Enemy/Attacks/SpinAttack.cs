@@ -31,7 +31,7 @@ public class SpinAttack : EnemyBaseState
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
         playerInRange = true;
-        enemyStateManager.Anim.SetTrigger("spinAttack");
+        enemyStateManager.GetAnimator.SetTrigger("spinAttack");
         this.time = 0;
         yield return new WaitForSeconds(0.1f);
     }
@@ -48,7 +48,7 @@ public class SpinAttack : EnemyBaseState
         PlayerKnockedEvent?.Invoke(enemyStateManager.transform);
     }
     
-    private void StopCounting(bool inRange)
+    private void StopCounting(bool inRange, EnemyBaseState currentState)
     {     
         playerInRange = inRange;
         if (!inRange) time = 0;

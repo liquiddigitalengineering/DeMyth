@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class DamageManager : MonoBehaviour
 {
-    public Action<float> OnPlayerDamaged;
+    public static Action<float> OnPlayerDamaged;
 
     public void DamagePlayer(float damage)
     {
-        Debug.Log("Player damaged");
-        //OnPlayerDamaged?.Invoke(damage);
+        OnPlayerDamaged?.Invoke(damage);
     }
 }

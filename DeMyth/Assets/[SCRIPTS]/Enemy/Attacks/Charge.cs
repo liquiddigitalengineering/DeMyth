@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 using Transform = UnityEngine.Transform;
 
 public enum DirectionEnum { Left, Right, Down, Up, NoDirection}
@@ -27,7 +28,9 @@ public class Charge : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
-        playerPosNormalized  = NormalizedPlayerPosition(enemyStateManager.Player.transform, enemyStateManager.transform);
+        playerPosNormalized  = NormalizedPlayerPosition(enemyStateManager.GetPlayer.transform, enemyStateManager.transform);
+
+        enemyStateManager.GetTail.transform.eulerAngles = TailRotation(enemyStateManager.GetTail.transform, enemyStateManager.GetPlayer.transform);
         ExecuteOperation(enemyStateManager);
 
         yield return null;
@@ -36,6 +39,7 @@ public class Charge : EnemyBaseState
     public override void UpdateState(EnemyStateManager enemyStateManager)
     {
         enemyStateManager.gameObject.transform.position = Vector3.MoveTowards(enemyStateManager.gameObject.transform.position, playerTransform, speed * Time.deltaTime);
+
     }
 
 
@@ -43,21 +47,21 @@ public class Charge : EnemyBaseState
     {
         switch (ChoosedDirection(enemyStateManager)) {
             case DirectionEnum.Left:
-                enemyStateManager.Anim.SetTrigger("sideCharge");
+                enemyStateManager.GetAnimator.SetTrigger("sideCharge");
                 break;
             case DirectionEnum.Right:
                 enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 180, 0);
-                enemyStateManager.Anim.SetTrigger("sideCharge");
+                enemyStateManager.GetAnimator.SetTrigger("sideCharge");
                 break;
             case DirectionEnum.Down:
-                enemyStateManager.Anim.SetTrigger("downCharge");
+                enemyStateManager.GetAnimator.SetTrigger("downCharge");
                 break;
             case DirectionEnum.Up:
-                enemyStateManager.Anim.SetTrigger("upCharge");
+                enemyStateManager.GetAnimator.SetTrigger("upCharge");
                 break;
         }
 
-        playerTransform = enemyStateManager.Player.transform.position;
+        playerTransform = enemyStateManager.GetPlayer.transform.position;
 
     }
 
@@ -86,4 +90,11 @@ public class Charge : EnemyBaseState
      
 
     private Vector2 NormalizedPlayerPosition(Transform playerTransform, Transform enemyTransform) => (playerTransform.position -enemyTransform.position).normalized;
+
+    private Vector3 TailRotation(Transform transform, Transform destination)
+    {
+        Vector3 v3Dir = transform.position - destination.position;
+        float angle = Mathf.Atan2(v3Dir.y, v3Dir.x) * Mathf.Rad2Deg;
+        return new Vector3(0, 0, angle);
+    }
 }

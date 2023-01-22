@@ -28,10 +28,8 @@ public class JumpSlam : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
-        Debug.Log("Hello");
-        enemyStateManager.Col.enabled = false;
         LookDirection(enemyStateManager);
-        enemyStateManager.Anim.SetTrigger("jump");
+        enemyStateManager.GetAnimator.SetTrigger("jump");
         canBeFollowed = false;
         ExecuteOperation(enemyStateManager);
         yield return new WaitForSeconds(0.5f);
@@ -46,7 +44,7 @@ public class JumpSlam : EnemyBaseState
         enemyStateManager.gameObject.transform.position = Vector3.MoveTowards(enemyStateManager.gameObject.transform.position, playerTransform, speed * Time.deltaTime);
 
         if(enemyStateManager.transform.position == playerTransform) {
-            enemyStateManager.Anim.speed = 1;
+            enemyStateManager.GetAnimator.speed = 1;
         }
            
     }
@@ -55,13 +53,17 @@ public class JumpSlam : EnemyBaseState
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
-        playerTransform = enemyStateManager.Player.transform.position;
+        playerTransform = enemyStateManager.GetPlayer.transform.position;
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager)
-    {
-        enemyStateManager.GetDamageManager.DamagePlayer(attackDamage);
-        enemyStateManager.Col.enabled = true;
+    { 
+
+        if(enemyStateManager.InRange)
+            enemyStateManager.GetDamageManager.DamagePlayer(attackDamage);
+
+
+        Debug.Log(enemyStateManager.InRange);
         enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
     }
 
@@ -69,7 +71,7 @@ public class JumpSlam : EnemyBaseState
     #region other methods
     private void LookDirection(EnemyStateManager enemyStateManager)
     {
-        Vector2 playerPosNormalized = (enemyStateManager.Player.transform.position - enemyStateManager.transform.position).normalized;
+        Vector2 playerPosNormalized = (enemyStateManager.GetPlayer.transform.position - enemyStateManager.transform.position).normalized;
         if (playerPosNormalized.x >= 0)
             enemyStateManager.gameObject.transform.localRotation = Quaternion.Euler(0, 180, 0);
         else if (playerPosNormalized.x < 0)

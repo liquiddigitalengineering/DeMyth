@@ -5,10 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu, savingGameobject;
+    [SerializeField] private GameObject pauseMenu, savingGameobject, gameOverMenu;
     [SerializeField] private PersistantSaving saving;
     [SerializeField] private string sceneName;
 
+    private void OnEnable()
+    {
+        PlayerHealth.OnGameOver += GameOver;
+    }
+
+    private void OnDisable()
+    {
+        PlayerHealth.OnGameOver -= GameOver;
+    }
     void Update()
     {
         if (!Input.GetKeyDown(KeyCode.Escape)) return;
@@ -22,6 +31,12 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
+    private void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOverMenu.SetActive(true);
+    }
+
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
@@ -32,6 +47,9 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame() => StartCoroutine(QuittingCoroutine());
 
+    public void RestartGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    #region Quit
     private IEnumerator QuittingCoroutine()
     {
         savingGameobject.SetActive(true);
@@ -39,4 +57,5 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Application.Quit();
     }
+    #endregion
 }

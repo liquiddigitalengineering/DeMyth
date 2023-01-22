@@ -13,8 +13,8 @@ public class ChargeSlam : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager,int time)
     {
-        enemyStateManager.Anim.SetTrigger("chargeSlam");
-        enemyStateManager.GraveStone.SetActive(true);
+        enemyStateManager.GetAnimator.SetTrigger("chargeSlam");
+        enemyStateManager.GetGraveStone.SetActive(true);
         yield return new WaitForSeconds(exitState);
 
         ExitState(enemyStateManager);
@@ -25,7 +25,7 @@ public class ChargeSlam : EnemyBaseState
         float y = Mathf.Cos(Time.time * frequency) * amplitude;
         float x = Mathf.Sin(Time.time * frequency) * amplitude;
 
-        enemyStateManager.GraveStone.transform.position = new Vector2(x + enemyStateManager.gameObject.transform.position.x, y + enemyStateManager.gameObject.transform.position.y);
+        enemyStateManager.GetGraveStone.transform.position = new Vector2(x + enemyStateManager.gameObject.transform.position.x, y + enemyStateManager.gameObject.transform.position.y);
     }
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
@@ -35,7 +35,7 @@ public class ChargeSlam : EnemyBaseState
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.GraveStone.SetActive(false);
+        enemyStateManager.GetGraveStone.SetActive(false);
         enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
     }
 }

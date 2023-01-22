@@ -31,7 +31,7 @@ public class BasicSlam : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
-        enemyStateManager.Anim.SetTrigger("basicSlam");
+        enemyStateManager.GetAnimator.SetTrigger("basicSlam");
         timeLeft = playerFollowTime;
         yield return new WaitForSeconds(0.1f);
     }
@@ -49,15 +49,15 @@ public class BasicSlam : EnemyBaseState
 
     protected override void ExecuteOperation(EnemyStateManager enemyStateManager)
     {
-        playerTransform = enemyStateManager.Player.transform;
+        playerTransform = enemyStateManager.GetPlayer.transform;
 
-        enemyStateManager.GraveStone.transform.position = Vector3.MoveTowards(enemyStateManager.GraveStone.transform.position, playerTransform.position, GraveStoneSpeed() * Time.deltaTime);
+        enemyStateManager.GetGraveStone.transform.position = Vector3.MoveTowards(enemyStateManager.GetGraveStone.transform.position, playerTransform.position, GraveStoneSpeed() * Time.deltaTime);
     }
 
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
-        enemyStateManager.GraveStone.GetComponent<Animator>().SetTrigger("despawn");
-        enemyStateManager.GraveStone.SetActive(false);
+        enemyStateManager.GetGraveStone.GetComponent<Animator>().SetTrigger("despawn");
+        enemyStateManager.GetGraveStone.SetActive(false);
         enemyStateManager.SwitchToIdle(timeBeforeNextAttack);
     }
 
@@ -65,9 +65,9 @@ public class BasicSlam : EnemyBaseState
 
     private void EventMethod(EnemyStateManager enemyStateManager)
     {
-        playerTransform = enemyStateManager.Player.transform;
-        enemyStateManager.GraveStone.transform.position = playerTransform.position;
-        enemyStateManager.GraveStone.SetActive(true);
+        playerTransform = enemyStateManager.GetPlayer.transform;
+        enemyStateManager.GetGraveStone.transform.position = playerTransform.position;
+        enemyStateManager.GetGraveStone.SetActive(true);
 
 
         canBeFollowed = true;

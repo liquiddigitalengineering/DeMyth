@@ -10,16 +10,17 @@ public class EnemyStateManager : MonoBehaviour
     /// <summary>
     /// Is triggered whenever the player leaves or enters enemy's range zone
     /// </summary>
-    public static Action<bool> OnRangeChanged;
+    public static Action<bool, EnemyBaseState> OnRangeChanged;
 
-    public SkeletonMecanim Skeleton { get => skeletonMecanim; }
-    public Animator Anim { get => anim; }
-    public GameObject Player { get => player; }
-    public GameObject GraveStone { get => graveStone; }
-    public Rigidbody2D Rb { get => rb; }
-    public Collider2D Col { get => col; }
+    public SkeletonMecanim GetSkeleton { get => skeletonMecanim; }
+    public Animator GetAnimator { get => anim; }
+    public GameObject GetPlayer { get => player; }
+    public GameObject GetGraveStone { get => graveStone; }
+    public Rigidbody2D GetRb { get => rb; }
+    public Collider2D GetCol { get => col; }
     public bool InRange { get; private set; }
     public DamageManager GetDamageManager { get => damageManager; }
+    public GameObject GetTail { get => tail; }
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
@@ -30,6 +31,7 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private Collider2D col;
     [SerializeField] private DamageManager damageManager;
     [SerializeField] private Light2D lightToFade;
+    [SerializeField] private GameObject tail;
 
     private EnemyBaseState currentState;
 
@@ -72,7 +74,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             InRange = true;
-            OnRangeChanged?.Invoke(true);
+            OnRangeChanged?.Invoke(true, currentState);
         }
             
     }
@@ -80,7 +82,7 @@ public class EnemyStateManager : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            OnRangeChanged?.Invoke(false);
+            OnRangeChanged?.Invoke(false, currentState);
             InRange = false;
         }         
             

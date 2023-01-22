@@ -28,6 +28,7 @@ public class JumpSlam : EnemyBaseState
 
     public override IEnumerator EnterState(EnemyStateManager enemyStateManager, int time)
     {
+        Debug.Log("Hello");
         enemyStateManager.Col.enabled = false;
         LookDirection(enemyStateManager);
         enemyStateManager.Anim.SetTrigger("jump");

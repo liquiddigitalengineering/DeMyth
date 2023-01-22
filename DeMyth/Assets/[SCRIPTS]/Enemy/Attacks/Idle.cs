@@ -26,6 +26,7 @@ public class Idle : EnemyBaseState
     private void OnEnable()
     {
         EnemyStateManager.OnRangeChanged += InRange;
+        timeLeft = timeBeforeNextSpinAttack;
     }
 
     private void OnDisable()
@@ -38,8 +39,9 @@ public class Idle : EnemyBaseState
         isNear = enemyStateManager.InRange;
 
         isUsingSpin = false;
-        ExecuteOperation(enemyStateManager);
+      
         yield return new WaitForSeconds(time);
+
         ExitState(enemyStateManager);
     }
 
@@ -63,6 +65,8 @@ public class Idle : EnemyBaseState
     public override void ExitState(EnemyStateManager enemyStateManager)
     {
         if (isUsingSpin) return;
+
+        ExecuteOperation(enemyStateManager);
         enemyStateManager.SwitchStates(state);
     }
 

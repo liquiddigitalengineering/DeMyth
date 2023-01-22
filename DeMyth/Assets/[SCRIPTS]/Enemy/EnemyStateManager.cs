@@ -89,6 +89,7 @@ public class EnemyStateManager : MonoBehaviour
 
     #region Light
     public void LightFade( bool fadeIn, float duration) => StartCoroutine(FadeInAndOut( fadeIn, duration));
+
     private IEnumerator FadeInAndOut( bool fadeIn, float duration)
     {
         float minLuminosity = 0;
@@ -106,8 +107,6 @@ public class EnemyStateManager : MonoBehaviour
             a = maxLuminosity;
             b = minLuminosity;
         }
-
-        float currentIntensity = lightToFade.intensity;
 
         while (counter < duration) {
             counter += Time.deltaTime;

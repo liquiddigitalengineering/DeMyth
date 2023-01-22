@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance { get; private set; }
@@ -14,6 +16,10 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText; // the text is the a child of the panel
+    [SerializeField] TextMeshProUGUI displayNameText;
+    [SerializeField] Image portraitImage;
+    [SerializeField] Sprite[] portraitImages;
+    private Animator layoutAnimator;
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -24,12 +30,21 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] choicesText;
 
 
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+    private const string LAYOUT_TAG = "layout";
+    private const string CHOICE_TAG = "choice";
+
+
+
     private void Awake()
     {
         if(instance != null) { Debug.LogWarning("found more than one Dialogue Manager in the scene"); }
         instance = this;
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
         //get allof the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -57,6 +72,11 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        //reset layout , name, protrait
+        displayNameText.text = "???";
+        portraitImage.sprite = null;
+        layoutAnimator.Play("Right");
+
         ContinueDialogue();
     }
 
@@ -68,8 +88,49 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentStory.Continue();  // the continue works like a stuck 
             // display choices,if any ,for this dialogue
             DisplayChoices();
+            HandleTag(currentStory.currentTags);
         }
         else { ExitDialogue(); }
+    }
+
+    private void HandleTag(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(':');
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    displayNameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    foreach(Sprite portrait in portraitImages)
+                    {
+                        if(portrait.name == tagValue)
+                        {
+                            portraitImage.sprite = portrait;
+                            break;
+                        }
+                    }
+                    break;
+                case LAYOUT_TAG:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                //case CHOICE_TAG:
+                //    switch(tagValue)
+                //    {
+                //       // here you can make a reward or punish system etc for the player choices
+                //    }
+                //    break;
+                default:
+                    Debug.LogWarning("the tag isnot diffined" + tagKey);
+                    break;
+            }
+
+        }
     }
 
     private void ExitDialogue()

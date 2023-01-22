@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
   m_Name: Ara chibi_SkeletonData
   m_EditorClassIdentifier: 
-  atlasAssets: []
+  atlasAssets:
+  - {fileID: 11400000, guid: 1c9f1f2e98aa5dd49bd20a7199d10474, type: 2}
   scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: b8b5c8201698d8345974a623a2ceca93, type: 3}
   isUpgradingBlendModeMaterials: 0

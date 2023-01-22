@@ -119,14 +119,15 @@ public class DialogueManager : MonoBehaviour
                 case LAYOUT_TAG:
                     layoutAnimator.Play(tagValue);
                     break;
-                //case CHOICE_TAG:
-                //    switch(tagValue)
-                //    {
-                //       // here you can make a reward or punish system etc for the player choices
-                //    }
-                //    break;
+                case CHOICE_TAG:
+                    ContinueDialogue();
+                    //switch (tagValue)
+                    //{
+                    //    // here you can make a reward or punish system etc for the player choices
+                    //}
+                    break;
                 default:
-                    Debug.LogWarning("the tag isnot diffined" + tagKey);
+                    Debug.LogWarning("the tag doesnt existed" + tagKey);
                     break;
             }
 

@@ -202,6 +202,8 @@ MonoBehaviour:
   playerSpeed: 0.5
   knockbackForce: 15
   knockbackTime: 1
+  dashReload: 2
+  dashPower: 10
 --- !u!114 &123099951
 MonoBehaviour:
   m_ObjectHideFlags: 0

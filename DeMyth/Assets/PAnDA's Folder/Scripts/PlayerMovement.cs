@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isKnockbacked = false;
     private Vector2 knockbackPosition;
 
+    [SerializeField] float dashReload = 2f;
+    [SerializeField] float dashPower = 75f;
+    private float lastDashTime=0;
+
     private Animator playerAnimator;
     private void OnEnable()
     {
@@ -31,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        lastDashTime = 0;
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
     }
@@ -46,7 +51,26 @@ public class PlayerMovement : MonoBehaviour
         //doesnt allow the player to move while he chats with a NPC
         //if(DialogueManager.instance.dialogueIsPlaying) { rb.velocity = Vector2.zero; return; }
 
-        Move();     
+        Move();
+        if(!CanDash()) { return; }
+        if(!Input.GetKey(KeyCode.LeftShift)) { return; }
+        Dash();
+        lastDashTime += dashReload;
+        playerAnimator.SetBool("Dash", false);
+    }
+
+    private bool CanDash()
+    {
+        if (Time.time > lastDashTime)
+            return true;
+        return false;
+    }
+
+    private void Dash()
+    {
+        Vector2 playerDirection = (transform.up * verticalInput + transform.right * horizontalInput); // (moveVector2D) = playerDirection
+        rb.AddForce(playerDirection * dashPower, ForceMode2D.Impulse);
+        playerAnimator.SetBool("Dash", true);
     }
 
     private void Move()

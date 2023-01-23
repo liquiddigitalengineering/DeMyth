@@ -46,7 +46,7 @@ public class PlayerAttacks : MonoBehaviour
     {
         playerAnimator.SetBool("Attack", false);
         if (!CanAttack()) { return; }
-        if(!Input.GetKeyDown(KeyCode.LeftShift)) { return; }
+        if(!Input.GetKeyDown(KeyCode.Space)) { return; }
 
         Attack();
         playerAnimator.SetBool("Attack", true);

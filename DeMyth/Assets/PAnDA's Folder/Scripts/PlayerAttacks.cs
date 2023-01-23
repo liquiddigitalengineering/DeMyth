@@ -17,7 +17,7 @@ public class PlayerAttacks : MonoBehaviour
 
     private float lastAttackTime=0;
 
-
+    private Animator playerAnimator;
     private void Start()
     {
         lastAttackTime = 0;
@@ -25,10 +25,10 @@ public class PlayerAttacks : MonoBehaviour
         currentAttackDamage = attackDamage;
         currentAttackReload = attackReload;
 
+        playerAnimator = GetComponent<Animator>();
 
 
-
-    DialogueManager dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+        DialogueManager dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         dialogueManager.choiceEvent += DialogueManager_choiceEvent;
     }
 
@@ -44,10 +44,12 @@ public class PlayerAttacks : MonoBehaviour
 
     private void Update()
     {
-        if(!CanAttack()) { return; }
-        if(!Input.GetKeyDown(KeyCode.Space)) { return; }
+        playerAnimator.SetBool("Attack", false);
+        if (!CanAttack()) { return; }
+        if(!Input.GetKeyDown(KeyCode.LeftShift)) { return; }
 
         Attack();
+        playerAnimator.SetBool("Attack", true);
         lastAttackTime = Time.time + currentAttackReload;
     }
 

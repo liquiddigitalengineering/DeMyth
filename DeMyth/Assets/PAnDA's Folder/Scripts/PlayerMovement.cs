@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isKnockbacked = false;
     private Vector2 knockbackPosition;
 
-
+    private Animator playerAnimator;
     private void OnEnable()
     {
         SpinAttack.PlayerKnockedEvent += KnockBack;
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -45,22 +46,19 @@ public class PlayerMovement : MonoBehaviour
         //doesnt allow the player to move while he chats with a NPC
         //if(DialogueManager.instance.dialogueIsPlaying) { rb.velocity = Vector2.zero; return; }
 
-        Move();
-        
+        Move();     
     }
-
-  
 
     private void Move()
     {
-        if (!isKnockbacked) {
-            Vector2 moveVector2D = (transform.up * verticalInput + transform.right * horizontalInput);
-
+        Vector2 moveVector2D = (transform.up * verticalInput + transform.right * horizontalInput);
+        if (!isKnockbacked) {           
             rb.velocity = moveVector2D * playerSpeed * 1000 * Time.deltaTime;
         }
         else {
             rb.velocity = knockbackPosition.normalized * knockbackForce;
         }
+        playerAnimator.SetFloat("Move", moveVector2D.magnitude);
     }
 
     private void Inputs()

@@ -7,8 +7,12 @@ public class PlayerLoot : MonoBehaviour
     private int currentHealthPotions;
     private bool lantern = false;
     private bool weapon = false;
+
+    private Animator playerAnimator;
     void Start()
     {
+        playerAnimator = GetComponent<Animator>();
+
         lantern = false;
         weapon = false;
         DialogueManager dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
@@ -25,6 +29,7 @@ public class PlayerLoot : MonoBehaviour
         if(obj == "Weapon")
         {
             weapon = true;
+            playerAnimator.SetBool("Weapon", true);
             return;
         }
         if(obj == "Lantern")

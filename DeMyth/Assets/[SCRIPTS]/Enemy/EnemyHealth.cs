@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
 
-    private void OnDamaged(float damage)
+    public void OnDamaged(float damage)
     {
         currentHealth -= damage;
 

@@ -6,7 +6,7 @@ hello player #speaker:Petra #portrait:Petra_Portrait #layout:Left
 now you will feel my power
 you will never end this mission hhh
 can you think you can begin your quest 
-    +[yes] #choice:HealthPotion
+    +[yes] #choice:Weapon
         I dare you to start 
     +[no] #choice:Lantern
         i knew your too weak 

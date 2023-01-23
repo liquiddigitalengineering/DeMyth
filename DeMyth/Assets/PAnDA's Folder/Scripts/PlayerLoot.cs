@@ -16,8 +16,7 @@ public class PlayerLoot : MonoBehaviour
     }
 
     private void DialogueManager_choiceEvent(string obj)
-    {
-        Debug.Log("the event worked"+obj);
+    {   
         if(obj == "HealthPotion")
         {
             currentHealthPotions +=1;

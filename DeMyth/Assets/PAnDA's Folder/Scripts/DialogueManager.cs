@@ -121,7 +121,12 @@ public class DialogueManager : MonoBehaviour
                     layoutAnimator.Play(tagValue);
                     break;
                 case CHOICE_TAG:
-                    ChoiceOption(tagValue);
+                    if (tagValue == "endgame")
+                    {
+                        // this should be called on the gamemanager to end the game
+                        return;
+                    }
+                    choiceEvent?.Invoke(tagValue);
                     ContinueDialogue();                                    
                     break;
                 default:
@@ -130,18 +135,6 @@ public class DialogueManager : MonoBehaviour
             }
 
         }
-    }
-
-    private void ChoiceOption(string tagValue)
-    {
-        Debug.Log("i am here" + tagValue);
-        if(tagValue == "endgame") 
-        {
-            // this should be called on the gamemanager to end the game
-            return;
-        }
-        choiceEvent?.Invoke(tagValue);
-        
     }
 
     private void ExitDialogue()
@@ -186,6 +179,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+        Debug.Log("test"+choiceIndex    );
         currentStory.ChooseChoiceIndex(choiceIndex);
     }
 

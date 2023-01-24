@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Ara chibi_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: a888133ea6003d741a442429ea7e1c55, type: 2}
+  - {fileID: 11400000, guid: 1c9f1f2e98aa5dd49bd20a7199d10474, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: 1ea1c133245bb6d488287717db048940, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: b8b5c8201698d8345974a623a2ceca93, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0

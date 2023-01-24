@@ -19,7 +19,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isKnockbacked = false;
     private Vector2 knockbackPosition;
 
+    [SerializeField] float dashReload = 2f;
+    [SerializeField] float dashPower = 75f;
+    private float lastDashTime=0;
 
+    private Animator playerAnimator;
     private void OnEnable()
     {
         SpinAttack.PlayerKnockedEvent += KnockBack;
@@ -31,7 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        lastDashTime = 0;
         rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,21 +52,37 @@ public class PlayerMovement : MonoBehaviour
         //if(DialogueManager.instance.dialogueIsPlaying) { rb.velocity = Vector2.zero; return; }
 
         Move();
-        
+        if(!CanDash()) { return; }
+        if(!Input.GetKey(KeyCode.LeftShift)) { return; }
+        Dash();
+        lastDashTime += dashReload;
+        playerAnimator.SetBool("Dash", false);
     }
 
-  
+    private bool CanDash()
+    {
+        if (Time.time > lastDashTime)
+            return true;
+        return false;
+    }
+
+    private void Dash()
+    {
+        Vector2 playerDirection = (transform.up * verticalInput + transform.right * horizontalInput); // (moveVector2D) = playerDirection
+        rb.AddForce(playerDirection * dashPower, ForceMode2D.Impulse);
+        playerAnimator.SetBool("Dash", true);
+    }
 
     private void Move()
     {
-        if (!isKnockbacked) {
-            Vector2 moveVector2D = (transform.up * verticalInput + transform.right * horizontalInput);
-
+        Vector2 moveVector2D = (transform.up * verticalInput + transform.right * horizontalInput);
+        if (!isKnockbacked) {           
             rb.velocity = moveVector2D * playerSpeed * 1000 * Time.deltaTime;
         }
         else {
             rb.velocity = knockbackPosition.normalized * knockbackForce;
         }
+        playerAnimator.SetFloat("Move", moveVector2D.magnitude);
     }
 
     private void Inputs()

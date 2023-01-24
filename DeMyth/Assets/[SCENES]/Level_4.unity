@@ -295,7 +295,7 @@ MonoBehaviour:
   rb: {fileID: 227767475}
   col: {fileID: 227767474}
   damageManager: {fileID: 227767479}
-  light2D: {fileID: 1761800655}
+  lightToFade: {fileID: 1761800655}
 --- !u!58 &227767474
 CircleCollider2D:
   m_ObjectHideFlags: 0

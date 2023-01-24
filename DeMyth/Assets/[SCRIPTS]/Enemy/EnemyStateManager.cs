@@ -20,7 +20,6 @@ public class EnemyStateManager : MonoBehaviour
     public Collider2D Col { get => col; }
     public bool InRange { get; private set; }
     public DamageManager GetDamageManager { get => damageManager; }
-    public Light2D GetLight2D { get => light2D; }
 
     [SerializeField] private GameObject player;
     [SerializeField] private EnemyBaseState initialState;
@@ -30,7 +29,7 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;
     [SerializeField] private DamageManager damageManager;
-    [SerializeField] private Light2D light2D;
+    [SerializeField] private Light2D lightToFade;
 
     private EnemyBaseState currentState;
 
@@ -80,13 +79,43 @@ public class EnemyStateManager : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Player")) {
             OnRangeChanged?.Invoke(false);
             InRange = false;
-        }
-           
+        }         
             
+    }
+    #endregion
+
+    #region Light
+    public void LightFade( bool fadeIn, float duration) => StartCoroutine(FadeInAndOut( fadeIn, duration));
+    private IEnumerator FadeInAndOut( bool fadeIn, float duration)
+    {
+        float minLuminosity = 0;
+        float maxLuminosity = 1;
+
+        float counter = 0f;
+
+        float a, b;
+
+        if (fadeIn) {
+            a = minLuminosity;
+            b = maxLuminosity;
+        }
+        else {
+            a = maxLuminosity;
+            b = minLuminosity;
+        }
+
+        float currentIntensity = lightToFade.intensity;
+
+        while (counter < duration) {
+            counter += Time.deltaTime;
+
+            lightToFade.intensity = Mathf.Lerp(a, b, counter / duration);
+
+            yield return null;
+        }
     }
     #endregion
 }

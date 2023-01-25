@@ -11,16 +11,28 @@ using System.Threading.Tasks;
 
 public class MainMenu : MonoBehaviour
 {
-	public int frameRate = 60;
+	[SerializeField] private int frameRate = 60;
+
+	[SerializeField] private Animator anim;
+	[SerializeField] private Image animationImage;
 
 	void Start(){
 		Application.targetFrameRate = frameRate;
 	}
-	public void SceneLoad(string SceneToLoad, bool LoadTransition){
-		SceneManager.LoadScene(SceneToLoad);
-	}
-	public void QuitGame(){
-		Application.Quit();
+
+	public void SceneLoad(string SceneToLoad)
+	{
+		animationImage.enabled = true;
+		StartCoroutine(LoadScene(SceneToLoad));
 	}
 
+	private IEnumerator LoadScene(string SceneToLoad)
+	{
+		anim.SetTrigger("LoadOut");
+		yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneToLoad);
+    }
+
+
+	public void QuitGame() => Application.Quit();
 }

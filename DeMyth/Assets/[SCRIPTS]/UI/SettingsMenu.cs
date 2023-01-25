@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    public AudioMixer musicMixer;
-    public Dropdown resolutionDropdown;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer musicMixer;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
 
-    [SerializeField] Slider audioSlider;
-    [SerializeField] Slider musicSlider;
+    [SerializeField] private Slider audioSlider;
+    [SerializeField] private Slider musicSlider;
 
     public GameObject masterEnabled, masterDisabled, musicEnabled, musicDisabled;
 

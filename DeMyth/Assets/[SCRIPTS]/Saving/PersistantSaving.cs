@@ -4,7 +4,8 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class PersistantSaving : MonoBehaviour
+[CreateAssetMenu(fileName ="saving", menuName ="Saving/PersistantSaving")]
+public class PersistantSaving : ScriptableObject
 {
     [SerializeField] private List<ScriptableObject> scriptableObjects;
 
@@ -12,6 +13,7 @@ public class PersistantSaving : MonoBehaviour
     private void CreateDataSavingDictionary() => Directory.CreateDirectory(DataSavingPath());
 
     string fileName;
+
 
     public void SaveData()
     {

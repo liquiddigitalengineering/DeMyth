@@ -1,13 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
-using System;
-using System.Text.RegularExpressions;
-using UnityEngine.Networking;
-using System.Threading.Tasks;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,8 +9,11 @@ public class MainMenu : MonoBehaviour
 
 	[SerializeField] private Animator anim;
 	[SerializeField] private Image animationImage;
+	[SerializeField] private PersistantSaving saving;
+
 
 	void Start(){
+		saving.LoadData();
 		Application.targetFrameRate = frameRate;
 	}
 

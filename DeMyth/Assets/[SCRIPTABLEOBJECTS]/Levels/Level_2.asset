@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level_2
   m_EditorClassIdentifier: 
   LevelIndex: 2
-  LevelCompleted: 0
+  LevelCompleted: 1
   PaperCollected: 0

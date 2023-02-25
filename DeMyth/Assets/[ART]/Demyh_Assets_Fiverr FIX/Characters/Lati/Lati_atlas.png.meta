@@ -1,0 +1,1156 @@
+fileFormatVersion: 2
+guid: cfa13760da5e0cc4ebb5efbda3eed6e8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lati_atlas_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1784
+        width: 186
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dcde57b071a554a8f93c991e57a27e
+      internalID: 1123819138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1784
+        width: 186
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8705c10de9ade414189a6726626caab3
+      internalID: -1464074587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1784
+        width: 187
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fbee7ec7a3db6d4b93bd63685b8d7bf
+      internalID: -80791561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_3
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1783
+        width: 187
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acce216cebc7f54fbbdc382c2d5ab94
+      internalID: -1723099138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_4
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1783
+        width: 186
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4581b70f98ee142ad65b50a4399fc4
+      internalID: -1623254509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_5
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1782
+        width: 187
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d193e56f3a9d36040a5613fd2afeb3b0
+      internalID: -391756760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_6
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 1781
+        width: 186
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fca1f99752a984abf9bfd4b0c415db
+      internalID: -2123376671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_7
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1488
+        width: 186
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c87749f0f23f14a8f73bba0282b714
+      internalID: 2136881389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_8
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1487
+        width: 187
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e1c77f7ed3f62428ff2579a7b3fdd8
+      internalID: 124655304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_9
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1486
+        width: 187
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9cdddfa4c1deb4bacc2a9e318312d8
+      internalID: -1879990442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_10
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1485
+        width: 186
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbd6dd0ba659f54d8c588652ea8fd98
+      internalID: 1068360822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_11
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 1484
+        width: 187
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0535cbcff7864b4097ce02063efc64e
+      internalID: 1335434141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_12
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1483
+        width: 187
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1558052fdf6daf4c9f140b78f892a1d
+      internalID: 69831224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_13
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 1482
+        width: 187
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9794ed460a2b95244a96525399d422ac
+      internalID: 506480952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1189
+        width: 189
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777124f70d3a466438014014d21e1a01
+      internalID: -2096575551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_15
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1188
+        width: 190
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17628546235f60d4587227c2b0ffd69d
+      internalID: 1563866117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_16
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1187
+        width: 191
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba46d408476e9f448395e846fa673f3
+      internalID: -442280634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_17
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1186
+        width: 191
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8817447eba3f53c49b39299d05b5b676
+      internalID: -1415714154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_18
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1186
+        width: 191
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fc6f1f7d8ba0b47a31e8c4a1b1085d
+      internalID: 983279614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_19
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 1185
+        width: 190
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f3a2e0b2fa3aa4a9ea65eb19d88786
+      internalID: -1873112239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_20
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 1184
+        width: 188
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9837da257cf1aa4f969f7bd0e0d5c4a
+      internalID: -1761694471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_21
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 892
+        width: 186
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbde2b5617451d64abe83d868fb271d5
+      internalID: -741639272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_22
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 891
+        width: 186
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539e9d8db6e715d418863be094cc8a53
+      internalID: 950925630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_23
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 891
+        width: 187
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fecdd441cd4ef7f4e923a5eeaaa7eb3c
+      internalID: 1662379939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_24
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 892
+        width: 186
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10103f7b646f6a439b02b09c9a2683f
+      internalID: 899032884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_25
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 892
+        width: 186
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49e634814c53d244920c902b22f3010
+      internalID: 782301841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_26
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 893
+        width: 186
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e49534d8b37d47489791e2547a39d07
+      internalID: 1262368660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_27
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 893
+        width: 186
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da017a1993f02d945be1d0d484e469c6
+      internalID: -781322359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_28
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 602
+        width: 186
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c734280455db04090ffee6f3385fa9
+      internalID: 1524872364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_29
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 602
+        width: 187
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc556506539216849821ad984dce00a5
+      internalID: -1370081995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_30
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 603
+        width: 186
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40215f2f51764594197b0ce74e06db9b
+      internalID: 1058609256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_31
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 604
+        width: 187
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba1079f382477e4696860f5c7b8b191
+      internalID: 825251117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_32
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 605
+        width: 187
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818e879039854e24c982e2ecdf47e3f2
+      internalID: 1484721002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_33
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 606
+        width: 187
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b3657bfc0d34749a015551c3866e29
+      internalID: 208314520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_34
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 607
+        width: 188
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689f244e1432ed4409cb3d44f3534005
+      internalID: 712888712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_35
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 316
+        width: 188
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d2c5ab20523b34f84a07c71a4cf230
+      internalID: -219094704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_36
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 317
+        width: 188
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578f4eb07c86d3b40abf98b4d4fb157e
+      internalID: -456668597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_37
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 318
+        width: 189
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6bbc7eaa16a4e4aa67566cef0e69e2
+      internalID: -32237434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_38
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 319
+        width: 191
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ab21ac7815dcc4988af00fb389021b
+      internalID: -774688364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_39
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 319
+        width: 192
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384de193887714e49ba05f1367a90d85
+      internalID: -172555932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_40
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 321
+        width: 193
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbc48b3986ed66408b06db325a5f9bf
+      internalID: -550917604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_41
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 321
+        width: 193
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398e4d6a6ccbbd5459eb14f31ba8e71c
+      internalID: 653116409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_42
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 30
+        width: 193
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a19f6d797412a642a7010db56c4183b
+      internalID: -1294965622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_43
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 31
+        width: 192
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd3d1c8b2b08594f9036fb84ef1d5dc
+      internalID: 1275518611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_44
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 31
+        width: 190
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0eaae6dbdefc4d479665f8503fe89e3
+      internalID: 1314947207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_45
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 31
+        width: 187
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ad2025b8f704c49be545b16e26ac2e
+      internalID: -1516517690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lati_atlas_46
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 32
+        width: 187
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492827b5f0ceee749b2efeb0020a60e1
+      internalID: -496029794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Lati_atlas_23: 1662379939
+      Lati_atlas_37: -32237434
+      Lati_atlas_31: 825251117
+      Lati_atlas_42: -1294965622
+      Lati_atlas_41: 653116409
+      Lati_atlas_6: -2123376671
+      Lati_atlas_5: -391756760
+      Lati_atlas_17: -1415714154
+      Lati_atlas_30: 1058609256
+      Lati_atlas_21: -741639272
+      Lati_atlas_18: 983279614
+      Lati_atlas_15: 1563866117
+      Lati_atlas_24: 899032884
+      Lati_atlas_36: -456668597
+      Lati_atlas_44: 1314947207
+      Lati_atlas_38: -774688364
+      Lati_atlas_20: -1761694471
+      Lati_atlas_45: -1516517690
+      Lati_atlas_40: -550917604
+      Lati_atlas_28: 1524872364
+      Lati_atlas_13: 506480952
+      Lati_atlas_25: 782301841
+      Lati_atlas_34: 712888712
+      Lati_atlas_3: -1723099138
+      Lati_atlas_10: 1068360822
+      Lati_atlas_7: 2136881389
+      Lati_atlas_22: 950925630
+      Lati_atlas_29: -1370081995
+      Lati_atlas_8: 124655304
+      Lati_atlas_46: -496029794
+      Lati_atlas_14: -2096575551
+      Lati_atlas_33: 208314520
+      Lati_atlas_19: -1873112239
+      Lati_atlas_12: 69831224
+      Lati_atlas_26: 1262368660
+      Lati_atlas_0: 1123819138
+      Lati_atlas_16: -442280634
+      Lati_atlas_9: -1879990442
+      Lati_atlas_43: 1275518611
+      Lati_atlas_35: -219094704
+      Lati_atlas_11: 1335434141
+      Lati_atlas_1: -1464074587
+      Lati_atlas_27: -781322359
+      Lati_atlas_32: 1484721002
+      Lati_atlas_39: -172555932
+      Lati_atlas_4: -1623254509
+      Lati_atlas_2: -80791561
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

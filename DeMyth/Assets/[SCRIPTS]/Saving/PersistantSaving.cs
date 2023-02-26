@@ -42,8 +42,7 @@ public class PersistantSaving : ScriptableObject
                 JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), scriptableObjects[i]);
                 file.Close();
             }
-            else
-                Debug.Log("File not found");
+   
         }
     }
 }

@@ -18,7 +18,8 @@ GameObject:
   - component: {fileID: 966148757609777298}
   - component: {fileID: 123099951}
   - component: {fileID: 123099952}
-  m_Layer: 0
+  - component: {fileID: 231655315}
+  m_Layer: 3
   m_Name: Player ARA
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966148757609777301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d7742e12e961d949a17cafb7ba9f51b, type: 3}
   m_Name: 
@@ -232,6 +233,24 @@ MonoBehaviour:
   attackRange: 1
   attackDamage: 2
   attackReload: 1
+--- !u!114 &231655315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966148757609777301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06902850bea41c42b96576313e48169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPoint: {x: 5, y: 5}
+  playerSpeed: 1
+  movementCooldown: 0.2
+  rayCanHitLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &4640680826552771429
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5054343669253541555}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}

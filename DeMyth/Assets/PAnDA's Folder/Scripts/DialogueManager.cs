@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Choices UI")]
     [SerializeField] GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+    private bool hasChoices;
 
 
     private const string SPEAKER_TAG = "speaker";
@@ -63,7 +64,8 @@ public class DialogueManager : MonoBehaviour
         // return right away if dialogue is not playing 
         if(!dialogueIsPlaying) { return; }
 
-        if(Input.GetKeyDown(KeyCode.Space)) { ContinueDialogue(); }
+        if(hasChoices) { return; }
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) { ContinueDialogue(); }
         
     }
 
@@ -80,9 +82,10 @@ public class DialogueManager : MonoBehaviour
 
         ContinueDialogue();
     }
-
+ 
     private void ContinueDialogue()
     {
+       
         if (currentStory.canContinue) 
         {
             //set the text for the current dialogue line 
@@ -143,9 +146,10 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
     }
-
+    
     private void DisplayChoices()
     {
+       
         List<Choice> currentChoices = currentStory.currentChoices;
 
         // check that we dont have less UI than our choices 
@@ -164,6 +168,7 @@ public class DialogueManager : MonoBehaviour
         {
             choices[i].gameObject.SetActive(false);
         }
+        hasChoices = currentChoices.Count > 0 ? true:false;
         StartCoroutine(SelectFirstChoices());
 
     }
@@ -178,9 +183,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void MakeChoice(int choiceIndex)
-    {
-        Debug.Log("test"+choiceIndex    );
+    {            
         currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueDialogue();
     }
 
 
